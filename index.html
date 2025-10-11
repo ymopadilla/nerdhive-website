@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nerd Hive - Coming Soon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            background: #F5F5F5;
+            min-height: 100vh;
+            color: #1a1a1a;
+        }
+        
+        .container {
+            background: #FFFFFF;
+            max-width: 1200px;
+            margin: 0 auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        /* Header Logo */
+        .header-logo {
+            text-align: center;
+            padding: 40px 50px 20px;
+            background: #FFFFFF;
+        }
+        
+        .header-logo img {
+            max-width: 500px;
+            width: 100%;
+            height: auto;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 40px 50px 60px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .coming-soon {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: #D72638;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+        
+        .description {
+            font-size: 18px;
+            color: #333;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+        
+        /* Gallery Section */
+        .gallery-section {
+            padding: 80px 50px;
+            background: #FAFAFA;
+        }
+        
+        .collection {
+            margin-bottom: 80px;
+        }
+        
+        .collection:last-child {
+            margin-bottom: 0;
+        }
+        
+        .collection-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .collection-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        
+        .collection-tagline {
+            font-size: 16px;
+            color: #D72638;
+            font-style: italic;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .product-card {
+            background: white;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(215, 38, 56, 0.15);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 15px;
+        }
+        
+        .product-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-align: center;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Email Signup */
+        .email-signup {
+            padding: 80px 50px;
+            background: white;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .email-signup h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 22px;
+            color: #1a1a1a;
+            margin-bottom: 25px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        
+        .google-form-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        iframe {
+            border: 1px solid #e0e0e0;
+            border-radius: 0;
+        }
+        
+        /* Footer */
+        .footer {
+            padding: 40px 50px;
+            text-align: center;
+            background: #FAFAFA;
+        }
+        
+        .footer-icon {
+            margin-bottom: 20px;
+        }
+        
+        .footer-icon img {
+            width: 60px;
+            height: auto;
+        }
+        
+        .footer-text {
+            font-size: 13px;
+            color: #999;
+            letter-spacing: 0.5px;
+        }
+        
+        @media (max-width: 768px) {
+            .header-logo {
+                padding: 30px 20px 15px;
+            }
+            
+            .header-logo img {
+                max-width: 350px;
+            }
+            
+            .hero {
+                padding: 30px 30px 40px;
+            }
+            
+            .coming-soon {
+                font-size: 28px;
+            }
+            
+            .description {
+                font-size: 16px;
+            }
+            
+            .gallery-section {
+                padding: 50px 30px;
+            }
+            
+            .product-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .email-signup {
+                padding: 50px 30px;
+            }
+            
+            .collection {
+                margin-bottom: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header with Logo -->
+        <div class="header-logo">
+            <img src="logo-header.png" alt="Nerd Hive - Smart is Always in Style">
+        </div>
+        
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="coming-soon">COMING SOON</div>
+            
+            <div class="description">
+                We're crafting clever, math-inspired apparel blending humor, heart, and intelligence. 
+                Where equations meet emotions and smart feels good.
+            </div>
+        </div>
+        
+        <!-- Gallery Section -->
+        <div class="gallery-section">
+            
+            <!-- Grandma Math Collection -->
+            <div class="collection">
+                <div class="collection-header">
+                    <div class="collection-name">GRANDMA MATH</div>
+                    <div class="collection-tagline">Because love is always exponential</div>
+                </div>
+                
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="grandma-math-1.jpg" alt="Grandkids = Infinite Love" class="product-image">
+                        <div class="product-title">GRANDKIDS = ∞ INFINITE LOVE</div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <img src="grandma-math-2.jpg" alt="Always One More Grandkid" class="product-image">
+                        <div class="product-title">ALWAYS ONE MORE GRANDKID</div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <img src="grandma-math-3.jpg" alt="The Grand Total Never Ends" class="product-image">
+                        <div class="product-title">THE GRAND TOTAL NEVER ENDS</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Nerd Editions Collection -->
+            <div class="collection">
+                <div class="collection-header">
+                    <div class="collection-name">NERD EDITIONS</div>
+                    <div class="collection-tagline">Smart looks good on everyone</div>
+                </div>
+                
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="nerd-edition-1.jpg" alt="Boundless Love Equation" class="product-image">
+                        <div class="product-title">BOUNDLESS LOVE EQUATION</div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <img src="nerd-edition-2.jpg" alt="Mathematical Certainty" class="product-image">
+                        <div class="product-title">MATHEMATICAL CERTAINTY</div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <img src="nerd-edition-3.jpg" alt="Love Approaches Infinity" class="product-image">
+                        <div class="product-title">LOVE APPROACHES INFINITY</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Nerd Exclusives Collection -->
+            <div class="collection">
+                <div class="collection-header">
+                    <div class="collection-name">NERD EXCLUSIVES</div>
+                    <div class="collection-tagline">Limited drops for unlimited minds</div>
+                </div>
+                
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="nerd-exclusive-1.jpg" alt="Zero Drag Theorem" class="product-image">
+                        <div class="product-title">ZERO DRAG THEOREM</div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <img src="nerd-exclusive-2.jpg" alt="Factorial Series" class="product-image">
+                        <div class="product-title">FACTORIAL SERIES</div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- Email Signup -->
+        <div class="email-signup">
+            <h3>BE THE FIRST TO KNOW</h3>
+            <div class="google-form-container">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd3asza3qsJ4AV0tmzdvmAsKrXKKty5Rfh_01EXMYEkqiijjQ/viewform?embedded=true" width="100%" height="400" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-icon">
+                <img src="logo-icon.png" alt="Nerd Hive Icon">
+            </div>
+            <div class="footer-text">
+                © 2025 Nerd Hive LLC. All rights reserved.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
