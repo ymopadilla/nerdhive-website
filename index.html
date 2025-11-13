@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nerd Hive Official - Where Nerd Culture Meets Wearable Humor</title>
+    <title>Nerd Hive | Celebrating Every Type of Nerd</title>
     <meta name="description" content="Premium apparel celebrating every flavor of nerd. From gaming to STEM, AI quirks to wellness warriors - shirts that actually get it.">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -86,8 +86,21 @@
             box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
             color: #1a1a1a;
         }
+
+        .coming-soon-nav {
+            color: #FFD700 !important;
+            border: 2px solid #FFD700;
+            padding: 8px 20px;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .coming-soon-nav:hover {
+            background: #FFD700;
+            color: #1a1a1a !important;
+        }
         
-        /* Thanksgiving Banner - PROMINENT! */
+        /* Thanksgiving Banner */
         .thanksgiving-banner {
             background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
             padding: 30px 50px;
@@ -164,15 +177,45 @@
         
         .hero-title .highlight {
             color: #FFD700;
+            -webkit-text-stroke: 2px #000000;
+            text-stroke: 2px #000000;
+            paint-order: stroke fill;
         }
         
         .hero-description {
             font-size: 20px;
             color: #333;
             line-height: 1.8;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
+        }
+
+        .hero-directives {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #FFD700;
+            margin: 40px 0;
+            line-height: 1.6;
+            -webkit-text-stroke: 1px #000000;
+            text-stroke: 1px #000000;
+            paint-order: stroke fill;
+        }
+
+        .hero-statement {
+            font-size: 22px;
+            color: #333;
+            font-weight: 700;
+            margin: 30px 0 40px;
         }
         
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
         .cta-button {
             display: inline-block;
             background: #1a1a1a;
@@ -193,43 +236,53 @@
             background: #FFD700;
             color: #1a1a1a;
         }
+
+        .cta-button-secondary {
+            background: transparent;
+            border: 3px solid #FFD700;
+            color: #1a1a1a;
+        }
+
+        .cta-button-secondary:hover {
+            background: #FFD700;
+            color: #1a1a1a;
+        }
         
         /* Collections Preview */
         .collections {
             padding: 100px 50px;
-            background: #FFFFFF;
+            background: white;
         }
         
         .section-title {
             font-family: 'Montserrat', sans-serif;
-            font-size: 36px;
+            font-size: 42px;
             font-weight: 900;
             text-align: center;
-            color: #1a1a1a;
             margin-bottom: 60px;
+            color: #1a1a1a;
             letter-spacing: 2px;
         }
         
         .collections-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
+            gap: 30px;
             max-width: 1200px;
             margin: 0 auto;
         }
         
         .collection-card {
             background: #F5F5F5;
-            padding: 40px;
+            padding: 40px 30px;
+            border-radius: 8px;
             text-align: center;
             transition: transform 0.3s, box-shadow 0.3s;
-            border: 3px solid transparent;
         }
         
         .collection-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 24px rgba(255, 215, 0, 0.3);
-            border-color: #FFD700;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
         
         .collection-icon {
@@ -239,8 +292,8 @@
         
         .collection-name {
             font-family: 'Montserrat', sans-serif;
-            font-size: 24px;
-            font-weight: 700;
+            font-size: 20px;
+            font-weight: 900;
             color: #1a1a1a;
             margin-bottom: 15px;
             letter-spacing: 1px;
@@ -255,16 +308,17 @@
         
         .collection-link {
             display: inline-block;
-            color: #1a1a1a;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
             font-weight: 700;
+            color: #FFD700;
             text-decoration: none;
-            padding-bottom: 5px;
-            border-bottom: 2px solid #FFD700;
+            letter-spacing: 1px;
             transition: color 0.3s;
         }
         
         .collection-link:hover {
-            color: #FFD700;
+            color: #1a1a1a;
         }
         
         /* About Section */
@@ -276,32 +330,31 @@
         .about-content {
             max-width: 900px;
             margin: 0 auto;
-            text-align: center;
         }
         
         .about-text {
             font-size: 18px;
             color: #333;
-            line-height: 1.9;
+            line-height: 1.8;
             margin-bottom: 30px;
-            text-align: left;
-        }
-        
-        .about-text strong {
-            color: #1a1a1a;
         }
         
         .tagline {
             font-family: 'Montserrat', sans-serif;
             font-size: 32px;
             font-weight: 900;
-            color: #1a1a1a;
-            margin-top: 40px;
+            color: #FFD700;
+            text-align: center;
+            margin-top: 60px;
             letter-spacing: 2px;
+            -webkit-text-stroke: 1.5px #000000;
+            text-stroke: 1.5px #000000;
+            paint-order: stroke fill;
         }
         
         .emoji {
-            color: #FFD700;
+            display: inline-block;
+            font-size: 36px;
         }
         
         /* Email Signup */
@@ -314,17 +367,17 @@
         
         .email-signup h3 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 32px;
+            font-size: 36px;
             font-weight: 900;
             color: #FFD700;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             letter-spacing: 2px;
         }
         
         .email-subtitle {
             font-size: 18px;
-            margin-bottom: 30px;
             color: #ccc;
+            margin-bottom: 40px;
         }
         
         .email-form {
@@ -337,23 +390,24 @@
         
         .email-form input[type="email"] {
             flex: 1;
-            padding: 15px 25px;
+            padding: 18px 25px;
             font-size: 16px;
             border: none;
             border-radius: 4px;
+            font-family: 'Lato', sans-serif;
         }
         
         .email-form button {
             background: #FFD700;
             color: #1a1a1a;
             font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
             font-size: 16px;
-            padding: 15px 40px;
+            font-weight: 700;
+            padding: 18px 40px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
             letter-spacing: 1px;
         }
         
@@ -364,19 +418,16 @@
         
         /* Footer */
         .footer {
-            background: #1a1a1a;
-            padding: 60px 50px 40px;
+            background: #0a0a0a;
+            padding: 60px 50px;
             text-align: center;
             color: white;
-        }
-        
-        .footer-logo {
-            margin-bottom: 30px;
         }
         
         .footer-logo img {
             height: 80px;
             width: auto;
+            margin-bottom: 30px;
         }
         
         .social-links {
@@ -389,40 +440,33 @@
         .social-links a {
             color: #FFD700;
             font-size: 28px;
-            transition: transform 0.3s, color 0.3s;
-            text-decoration: none;
+            transition: color 0.3s, transform 0.3s;
         }
         
         .social-links a:hover {
-            transform: translateY(-3px);
-            color: #FFF;
+            color: white;
+            transform: scale(1.2);
         }
         
         .footer-text {
-            font-size: 14px;
             color: #999;
-            letter-spacing: 0.5px;
+            font-size: 14px;
         }
         
-        /* Mobile Menu Toggle */
+        /* Mobile Menu */
         .menu-toggle {
             display: none;
             background: none;
             border: none;
-            color: #FFD700;
-            font-size: 28px;
+            color: white;
+            font-size: 24px;
             cursor: pointer;
         }
         
-        /* Mobile Responsive */
+        /* Responsive Design */
         @media (max-width: 768px) {
             .nav {
-                padding: 15px 30px;
-                flex-wrap: wrap;
-            }
-            
-            .nav-brand {
-                font-size: 20px;
+                padding: 15px 20px;
             }
             
             .menu-toggle {
@@ -431,10 +475,14 @@
             
             .nav-links {
                 display: none;
-                width: 100%;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #1a1a1a;
                 flex-direction: column;
+                padding: 20px;
                 gap: 20px;
-                padding-top: 20px;
             }
             
             .nav-links.active {
@@ -442,19 +490,15 @@
             }
             
             .thanksgiving-banner {
-                padding: 20px 30px;
+                padding: 20px;
             }
             
             .thanksgiving-banner h2 {
                 font-size: 24px;
             }
             
-            .thanksgiving-banner p {
-                font-size: 16px;
-            }
-            
             .hero {
-                padding: 50px 30px;
+                padding: 40px 20px;
             }
             
             .hero-title {
@@ -462,17 +506,45 @@
             }
             
             .hero-description {
+                font-size: 16px;
+            }
+
+            .hero-directives {
                 font-size: 18px;
             }
             
-            .collections,
-            .about,
-            .email-signup {
-                padding: 60px 30px;
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-button {
+                padding: 15px 40px;
+                font-size: 16px;
+            }
+            
+            .collections {
+                padding: 60px 20px;
+            }
+            
+            .section-title {
+                font-size: 32px;
             }
             
             .collections-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .about {
+                padding: 60px 20px;
+            }
+            
+            .about-text {
+                font-size: 16px;
+            }
+            
+            .email-signup {
+                padding: 60px 20px;
             }
             
             .email-form {
@@ -501,6 +573,7 @@
         <div class="nav-links" id="navLinks">
             <a href="#home">HOME</a>
             <a href="#collections">COLLECTIONS</a>
+            <a href="coming-soon.html" class="coming-soon-nav">🚀 COMING SOON</a>
             <a href="#about">ABOUT</a>
             <a href="https://nerd-hive-official.printify.me/" target="_blank" class="shop-btn">SHOP NOW</a>
         </div>
@@ -523,14 +596,28 @@
             <h1 class="hero-title">SHIRTS THAT ACTUALLY <span class="highlight">GET IT</span></h1>
             
             <p class="hero-description">
-                Where nerd culture meets wearable humor. From gaming trash talk to AI quirks, STEM brilliance to wellness warriors—Nerd Hive celebrates every flavor of nerd through shirts that actually get it.
+                Celebrating every type of nerd. From gaming legends to STEM geniuses, AI platform wars to creative chaos—Nerd Hive creates designs for the moments you're ready to own. Every shirt is a story, a mindset, a moment of recognition—proof there are more of you out there.
             </p>
-            
+
             <p class="hero-description">
-                <strong>Because being a nerd isn't just one thing. It's a whole personality (or twelve).</strong>
+                <strong>We work with real nerds from every community to keep our designs authentic, not contrived.</strong> From aerospace engineers to gaming legends, book lovers to basketball strategists—every design is validated by the people who live it.
             </p>
             
-            <a href="https://nerd-hive-official.printify.me/" target="_blank" class="cta-button">SHOP THE HIVE</a>
+            <div class="hero-directives">
+                No hiding.<br>
+                Own your quirks.<br>
+                This is you.<br>
+                No apologizing.
+            </div>
+
+            <p class="hero-statement">
+                This is your hive. Your community. Your statement.
+            </p>
+            
+            <div class="cta-buttons">
+                <a href="https://nerd-hive-official.printify.me/" target="_blank" class="cta-button">SHOP THE HIVE</a>
+                <a href="coming-soon.html" class="cta-button cta-button-secondary">SEE WHAT'S COMING 🚀</a>
+            </div>
         </div>
     </section>
 
@@ -604,7 +691,7 @@
             </p>
             
             <p class="about-text">
-                <strong>Here's the best part:</strong> All my kids give me feedback on the designs. My son (aerospace engineer at Northrop Grumman) vets the STEM humor for technical accuracy. This isn't just me making shirts. It's a whole community of nerds helping each other feel seen.
+                <strong>Here's the best part:</strong> All my kids give me feedback on the designs. My son (aerospace engineer) vets the STEM humor for technical accuracy. <strong>We work with authentic voices from every nerd community to create designs that feel genuine, not contrived.</strong> This isn't just me making shirts. It's a whole community of nerds creating together.
             </p>
             
             <p class="about-text">
@@ -612,7 +699,7 @@
             </p>
             
             <p class="about-text">
-                <strong>I'm having the time of my life.</strong> Working at ungodly hours because creativity doesn't follow a schedule. Building something where chaos becomes the brand. Where every shirt is an inside joke that makes you feel like you found your people. Where being different isn't just accepted—it's celebrated.
+                <strong>I'm having the time of my life.</strong> Working at ungodly hours because creativity doesn't follow a schedule. Building something where chaos becomes the brand. Where every shirt is an inside joke—proof you're not alone. Where being different isn't just accepted—it's celebrated.
             </p>
             
             <p class="about-text">
