@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Word Nerd - Premium grammar humor collection. English teachers, editors, and grammar police unite! Unapologetically correcting since we could read.">
+    <title>Word Nerd | Grammar & Typography Collection | Nerd Hive</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', 'Helvetica', sans-serif;
+            background-color: #f5f5f5;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+            color: #FFD700;
+            padding: 11px 15px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .header h1 {
+            font-size: 27px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+            text-shadow: 
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .header .pen-emoji {
+            font-size: 27px;
+            display: inline;
+            margin-right: 8px;
+        }
+
+        .header .tagline {
+            font-size: 15px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: #FFFFFF;
+        }
+
+        .header .sub-tagline {
+            font-size: 12px;
+            font-style: italic;
+            opacity: 0.9;
+            color: #CCCCCC;
+        }
+
+        /* Intro Section */
+        .intro-section {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .intro-section h2 {
+            font-size: 16px;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+
+        .intro-section p {
+            font-size: 9px;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 8px;
+        }
+
+        .collection-badge {
+            display: inline-block;
+            background: #FFD700;
+            color: #1a1a1a;
+            padding: 6px 15px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 9px;
+            margin: 10px 0;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+            border: 2px solid #000;
+        }
+
+        /* Dual Shop Buttons */
+        .dual-shop-section {
+            background: #FFFFFF;
+            padding: 20px 20px;
+            text-align: center;
+        }
+
+        .dual-shop-section h2 {
+            font-size: 16px;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+
+        .dual-shop-section p {
+            font-size: 9px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .shop-button-dark,
+        .shop-button-light {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 9px;
+            font-weight: 700;
+            padding: 9px 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 3px solid #000;
+        }
+
+        .shop-button-dark {
+            background: #1a1a1a;
+            color: #FFD700;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .shop-button-dark:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .shop-button-light {
+            background: #FFD700;
+            color: #1a1a1a;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .shop-button-light:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        /* Products Section */
+        .products-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .products-section h2 {
+            text-align: center;
+            font-size: 36px;
+            color: #1a1a1a;
+            margin-bottom: 50px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+            margin-bottom: 60px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .product-header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+            padding: 30px;
+            text-align: center;
+        }
+
+        .product-header h3 {
+            font-size: 28px;
+            color: #FFD700;
+            margin-bottom: 10px;
+            text-shadow: 
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .product-header .emoji {
+            font-size: 40px;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .product-description {
+            font-size: 16px;
+            color: #FFFFFF;
+            line-height: 1.7;
+        }
+
+        .product-body {
+            padding: 40px;
+        }
+
+        .product-image {
+            max-width: 450px;
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .size-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .size-card {
+            background: #f9f9f9;
+            border: 3px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .size-card:hover {
+            border-color: #FFD700;
+            background: #fffef7;
+            transform: translateY(-3px);
+        }
+
+        .size-card h4 {
+            font-size: 18px;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+        }
+
+        .sizes {
+            font-size: 16px;
+            color: #666;
+            margin: 10px 0;
+        }
+
+        .price {
+            font-size: 24px;
+            font-weight: 700;
+            color: #FFD700;
+            margin: 15px 0;
+        }
+
+        .colors {
+            font-size: 14px;
+            color: #666;
+            margin: 15px 0;
+            line-height: 1.6;
+        }
+
+        .shop-button {
+            display: inline-block;
+            background: #FFD700;
+            color: #1a1a1a;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 700;
+            margin-top: 15px;
+            transition: background 0.3s ease;
+            border: 2px solid #000;
+        }
+
+        .shop-button:hover {
+            background: #FFC700;
+        }
+
+        .info-callout {
+            background: #fffef7;
+            border-left: 5px solid #FFD700;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 6px;
+        }
+
+        .info-callout p {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* Browse All Designs Section */
+        .browse-all-section {
+            background: #FFFFFF;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .browse-all-section h2 {
+            font-size: 32px;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+
+        .browse-all-section p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .browse-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #FFD700;
+            color: #1a1a1a;
+            padding: 20px 50px;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 700;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: 3px solid #000;
+        }
+
+        .browse-button:hover {
+            background: #FFC700;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+        }
+
+        .browse-button .emoji {
+            font-size: 24px;
+        }
+
+        .search-tip {
+            max-width: 700px;
+            margin: 40px auto 0;
+            background: #fffef7;
+            border: 2px solid #FFD700;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: left;
+        }
+
+        .search-tip p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .tip-icon {
+            font-size: 20px;
+            margin-right: 8px;
+        }
+
+        /* Why You'll Love Section */
+        .why-love-section {
+            background: #f5f5f5;
+            padding: 60px 20px;
+        }
+
+        .why-love-box {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .why-love-box h2 {
+            font-size: 32px;
+            color: #1a1a1a;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .why-love-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .why-love-box li {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            padding-left: 40px;
+            position: relative;
+        }
+
+        .why-love-box li .emoji {
+            position: absolute;
+            left: 0;
+            font-size: 24px;
+        }
+
+        /* Explore Other Collections */
+        .explore-section {
+            background: #FFFFFF;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .explore-section h3 {
+            font-size: 24px;
+        }
+
+        .explore-section a {
+            color: #FFD700;
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+
+        .explore-section a:hover {
+            color: #FFC700;
+        }
+
+        /* Footer */
+        .footer-section {
+            background: #1a1a1a;
+            color: #FFFFFF;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-section h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #FFD700;
+        }
+
+        .footer-section p {
+            font-size: 14px;
+            color: #CCCCCC;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .intro-section h2,
+            .products-section h2,
+            .browse-all-section h2,
+            .why-love-box h2 {
+                font-size: 24px;
+            }
+
+            .size-options {
+                grid-template-columns: 1fr;
+            }
+
+            .button-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .shop-button-dark,
+            .shop-button-light {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div class="header">
+        <h1><span class="pen-emoji">🖊️</span> WORD NERD</h1>
+        <p class="tagline">Unapologetically Correcting Grammar Since We Could Read</p>
+        <p class="sub-tagline">For English teachers, editors, and grammar police everywhere</p>
+    </div>
+
+    <!-- Intro Section -->
+    <div class="intro-section">
+        <h2>Welcome to the Word Nerd Collection</h2>
+        <p>For the grammar nerds who've been correcting people since they could read. English teachers who mentally grade texts. Editors who can't turn off their brain. Writers who notice EVERY typo. Grammar enthusiasts who judge you by your syntax.</p>
+        <p>This isn't just grammar humor - it's <strong>authentic editorial markup, real proofreading symbols, and the unapologetic energy every word nerd embodies.</strong></p>
+        <span class="collection-badge">📝 PREMIUM TYPOGRAPHY COLLECTION</span>
+    </div>
+
+    <!-- Dual Shop Buttons Section -->
+    <div class="dual-shop-section">
+        <h2>Choose Your Style</h2>
+        <p>Available in both dark and light color options. Pick your perfect word nerd aesthetic!</p>
+        <div class="button-container">
+            <a href="https://nerd-hive-official.printify.me/products" class="shop-button-dark" target="_blank">
+                SHOP DARK COLORS
+            </a>
+            <a href="https://nerd-hive-official.printify.me/products" class="shop-button-light" target="_blank">
+                SHOP LIGHT COLORS
+            </a>
+        </div>
+    </div>
+
+    <!-- Products Section -->
+    <div class="products-section">
+        <h2>Word Nerd Designs</h2>
+
+        <!-- Product 1: Unapologetically Correcting Your Grammar -->
+        <div class="product-card">
+            <div class="product-header">
+                <span class="emoji">✍️</span>
+                <h3>Unapologetically Correcting Your Grammar</h3>
+                <p class="product-description">Meta grammar correction in action! Features authentic editorial proofreading marks with strikethroughs and that infamous (.)" - the correction process displayed in real-time.</p>
+            </div>
+            <div class="product-body">
+                <img src="/assets/wordnerd/wn-correcting-your-grammar-light.png" alt="Unapologetically Correcting Your Grammar" class="product-image">
+                <div class="size-options">
+                    <!-- Dark Colors -->
+                    <div class="size-card">
+                        <h4>🖤 Dark Colors</h4>
+                        <p class="sizes">Sizes S - 4XL</p>
+                        <p class="price">$24.99</p>
+                        <p class="colors"><strong>Colors:</strong> Black, Asphalt, Navy, Team Purple, Berry, Canvas Red</p>
+                        <a href="https://nerd-hive-official.printify.me/product/24808491/word-nerd-unapologetically-correcting-your-grammar-and-im-not-sorry-tee-dark-grammar-police-gift-english-teacher-tee-editor-humor-typography-nerd" class="shop-button" target="_blank">Shop Dark Colors</a>
+                    </div>
+                    <!-- Light Colors -->
+                    <div class="size-card">
+                        <h4>☀️ Light Colors</h4>
+                        <p class="sizes">Sizes S - 4XL</p>
+                        <p class="price">$24.99</p>
+                        <p class="colors"><strong>Colors:</strong> White, Natural, Ash, Soft Cream</p>
+                        <a href="https://nerd-hive-official.printify.me/product/24808494/word-nerd-unapologetically-correcting-your-grammar-and-im-not-sorry-tee-light-grammar-police-gift-english-teacher-tee-editor-humor-typography-nerd" class="shop-button" target="_blank">Shop Light Colors</a>
+                    </div>
+                </div>
+                <div class="info-callout">
+                    <p><strong>🖊️ Word Nerd Collection</strong> - This isn't just a shirt about grammar - it's a demonstration of grammar correction in action. Perfect for editors who can't turn off their brain!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 2: Correcting Your Grammar Since the 20th Century -->
+        <div class="product-card">
+            <div class="product-header">
+                <span class="emoji">📅</span>
+                <h3>Correcting Your Grammar Since the 20th Century</h3>
+                <p class="product-description">For those who've been at this grammar game for decades. Clean typography celebrating millennials and Gen X who grew up with actual grammar lessons!</p>
+            </div>
+            <div class="product-body">
+                <img src="/assets/wordnerd/wn-correcting-since-20th-century-dark.png" alt="Correcting Your Grammar Since the 20th Century" class="product-image">
+                <div class="size-options">
+                    <!-- Dark Colors -->
+                    <div class="size-card">
+                        <h4>🖤 Dark Colors</h4>
+                        <p class="sizes">Sizes S - 4XL</p>
+                        <p class="price">$24.99</p>
+                        <p class="colors"><strong>Colors:</strong> Black, Asphalt, Navy, Team Purple, Berry, Canvas Red</p>
+                        <a href="https://nerd-hive-official.printify.me/product/24808473/word-nerd-correcting-your-grammar-since-the-20th-century-tee-dark-grammar-police-gift-millennial-english-teacher-tee-gen-x-editor-humor-typography-nerd" class="shop-button" target="_blank">Shop Dark Colors</a>
+                    </div>
+                    <!-- Light Colors -->
+                    <div class="size-card">
+                        <h4>☀️ Light Colors</h4>
+                        <p class="sizes">Sizes S - 4XL</p>
+                        <p class="price">$24.99</p>
+                        <p class="colors"><strong>Colors:</strong> White, Natural, Ash, Soft Cream</p>
+                        <a href="https://nerd-hive-official.printify.me/product/24808494/word-nerd-correcting-your-grammar-since-the-20th-century-tee-light-grammar-police-gift-millennial-english-teacher-tee-gen-x-editor-humor-typography-nerd" class="shop-button" target="_blank">Shop Light Colors</a>
+                    </div>
+                </div>
+                <div class="info-callout">
+                    <p><strong>📝 Classic Word Nerd Design</strong> - Simple, bold statement for those who've been grammar police their entire lives. No apologies, no regrets!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 3: Grammatically Superior Since the 1900s -->
+        <div class="product-card">
+            <div class="product-header">
+                <span class="emoji">⭐</span>
+                <h3>Grammatically Superior Since the 1900s | Gold Star</h3>
+                <p class="product-description">Old school excellence! Features a vintage gold star stamp celebrating grammatical superiority. For those who take pride in proper language.</p>
+            </div>
+            <div class="product-body">
+                <img src="/assets/wordnerd/wn-grammatically-superior-dark.png" alt="Grammatically Superior Since the 1900s" class="product-image">
+                <div class="size-options">
+                    <!-- Dark Colors -->
+                    <div class="size-card">
+                        <h4>🖤 Dark Colors</h4>
+                        <p class="sizes">Sizes S - 4XL</p>
+                        <p class="price">$24.99</p>
+                        <p class="colors"><strong>Colors:</strong> Black, Asphalt, Navy, Team Purple, Berry, Canvas Red</p>
+                        <a href="https://nerd-hive-official.printify.me/product/24808462/word-nerd-grammatically-superior-since-the-1900s-gold-star-tee-dark-grammar-police-gift-english-teacher-humor-editor-pride-tee-typography-nerd-apparel" class="shop-button" target="_blank">Shop Dark Colors</a>
+                    </div>
+                    <!-- Light Colors -->
+                    <div class="size-card">
+                        <h4>☀️ Light Colors</h4>
+                        <p class="sizes">Sizes S - 4XL</p>
+                        <p class="price">$24.99</p>
+                        <p class="colors"><strong>Colors:</strong> White, Natural, Ash, Soft Cream</p>
+                        <a href="https://nerd-hive-official.printify.me/product/24808474/word-nerd-grammatically-superior-since-the-1900s-gold-star-tee-light-grammar-police-gift-english-teacher-humor-editor-pride-tee-typography-nerd-apparel" class="shop-button" target="_blank">Shop Light Colors</a>
+                    </div>
+                </div>
+                <div class="info-callout">
+                    <p><strong>⭐ Premium Word Nerd Design</strong> - Vintage gold star aesthetic with confident messaging. For those who know their grammar game is strong!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 4: Thesaurus Rex -->
+        <div class="product-card">
+            <div class="product-header">
+                <span class="emoji">🦖</span>
+                <h3>Thesaurus Rex</h3>
+                <p class="product-description">The ultimate word nerd pun! Vocabulary humor meets prehistoric power. For those who never met a synonym they didn't love.</p>
+            </div>
+            <div class="product-body">
+                <img src="/assets/wordnerd/wn-thesaurus-rex-dark.png" alt="Thesaurus Rex" class="product-image">
+                <div class="size-options">
+                    <!-- Dark Colors -->
+                    <div class="size-card">
+                        <h4>🖤 Dark Colors</h4>
+                        <p class="sizes">Sizes S - 4XL</p>
+                        <p class="price">$24.99</p>
+                        <p class="colors"><strong>Colors:</strong> Black, Asphalt, Navy, Team Purple, Berry, Canvas Red</p>
+                        <a href="https://nerd-hive-official.printify.me/product/24808548/word-nerd-thesaurus-rex-tee-dark-english-teacher-gift-vocabulary-humor-funny-grammar-english-teacher-editor-humor-pun-lover-apparel" class="shop-button" target="_blank">Shop Dark Colors</a>
+                    </div>
+                    <!-- Light Colors -->
+                    <div class="size-card">
+                        <h4>☀️ Light Colors</h4>
+                        <p class="sizes">Sizes S - 4XL</p>
+                        <p class="price">$24.99</p>
+                        <p class="colors"><strong>Colors:</strong> White, Natural, Ash, Soft Cream</p>
+                        <a href="https://nerd-hive-official.printify.me/product/24808540/word-nerd-thesaurus-rex-tee-light-english-teacher-gift-vocabulary-humor-funny-grammar-english-teacher-editor-humor-pun-lover-apparel" class="shop-button" target="_blank">Shop Light Colors</a>
+                    </div>
+                </div>
+                <div class="info-callout">
+                    <p><strong>🦖 Fun Word Nerd Design</strong> - Perfect blend of vocabulary love and dinosaur humor. Great gift for English teachers and editors with a sense of humor!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 5: Oxford Comma Enthusiast -->
+        <div class="product-card">
+            <div class="product-header">
+                <span class="emoji">📚</span>
+                <h3>Oxford Comma Enthusiast</h3>
+                <p class="product-description">Take a stand on the great punctuation debate! For those who will defend the Oxford comma until their dying breath. Literary punctuation at its finest.</p>
+            </div>
+            <div class="product-body">
+                <img src="/assets/wordnerd/wn-oxford-comma-dark.png" alt="Oxford Comma Enthusiast" class="product-image">
+                <div class="size-options">
+                    <!-- Dark Colors -->
+                    <div class="size-card">
+                        <h4>🖤 Dark Colors</h4>
+                        <p class="sizes">Sizes S - 4XL</p>
+                        <p class="price">$24.99</p>
+                        <p class="colors"><strong>Colors:</strong> Black, Asphalt, Navy, Team Purple, Berry, Canvas Red</p>
+                        <a href="https://nerd-hive-official.printify.me/product/24808463/word-nerd-oxford-comma-enthusiast-tee-dark-english-teacher-gift-editor-humor-grammar-police-literary-punctuation" class="shop-button" target="_blank">Shop Dark Colors</a>
+                    </div>
+                    <!-- Light Colors -->
+                    <div class="size-card">
+                        <h4>☀️ Light Colors</h4>
+                        <p class="sizes">Sizes S - 4XL</p>
+                        <p class="price">$24.99</p>
+                        <p class="colors"><strong>Colors:</strong> White, Natural, Ash, Soft Cream</p>
+                        <a href="https://nerd-hive-official.printify.me/product/24808459/word-nerd-oxford-comma-enthusiast-tee-light-english-teacher-gift-editor-humor-grammar-police-literary-punctuation" class="shop-button" target="_blank">Shop Light Colors</a>
+                    </div>
+                </div>
+                <div class="info-callout">
+                    <p><strong>📚 Literary Word Nerd Design</strong> - Make your punctuation preferences known! Perfect for editors, teachers, and anyone who cares deeply about proper comma usage.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Browse All Designs Section -->
+    <div class="browse-all-section">
+        <h2>Or Browse All 5 Designs Together</h2>
+        <p>Want to see all Word Nerd designs in one place? Click below to visit our store, then use the search trick!</p>
+        
+        <a href="https://nerd-hive-official.printify.me/" class="browse-button" target="_blank">
+            <span class="emoji">🛍️</span> BROWSE ALL WORD NERD DESIGNS
+        </a>
+
+        <div class="search-tip">
+            <p><span class="tip-icon">💡</span> <strong>Pro Search Tip:</strong> Once our store opens, press <strong>Ctrl+F</strong> (PC) or <strong>Cmd+F</strong> (Mac), then type <em>"Word Nerd"</em> in the search box. All designs from this collection will highlight instantly! This works on any device and makes finding designs super easy.</p>
+        </div>
+    </div>
+
+    <!-- Why You'll Love This Collection Section -->
+    <div class="why-love-section">
+        <div class="why-love-box">
+            <h2>Why You'll Love This Collection</h2>
+            <ul>
+                <li><span class="emoji">🖊️</span> <strong>Authentic Editorial Marks:</strong> Real proofreading symbols and correction notation that actual editors use</li>
+                <li><span class="emoji">🖊️</span> <strong>Premium Typography:</strong> Professionally crafted designs that honor proper grammar and punctuation</li>
+                <li><span class="emoji">🖊️</span> <strong>Both Dark & Light:</strong> Every design available in dark and light color options to match your style</li>
+                <li><span class="emoji">🖊️</span> <strong>Size Inclusive:</strong> Sizes S-4XL because everyone deserves premium word nerd apparel</li>
+                <li><span class="emoji">🖊️</span> <strong>Bella Canvas Quality:</strong> Premium fabric - soft, comfortable, durable tees</li>
+                <li><span class="emoji">🖊️</span> <strong>Perfect Gifts:</strong> Ideal for English teachers, editors, writers, and grammar enthusiasts!</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Explore Other Collections Section -->
+    <div class="explore-section">
+        <h3><a href="index.html">← Explore Other Collections</a></h3>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-section">
+        <h3><strong>Wear your nerd. Own your chaos.</strong> 🐝</h3>
+        <p>© 2025 Nerd Hive. All rights reserved.</p>
+    </div>
+
+</body>
+</html>
