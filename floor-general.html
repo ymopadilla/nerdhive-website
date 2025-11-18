@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Floor General - Premium basketball mindset collection. Leadership, strategy, and the mental game that separates players from commanders.">
+    <title>Floor General | Basketball Mindset Collection | Nerd Hive</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', 'Helvetica', sans-serif;
+            background-color: #f5f5f5;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+            color: #FFD700;
+            padding: 15px 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .header h1 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            text-shadow: 
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .header .basketball-emoji {
+            font-size: 36px;
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .header .tagline {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: #FFFFFF;
+        }
+
+        .header .sub-tagline {
+            font-size: 16px;
+            font-style: italic;
+            opacity: 0.9;
+            color: #CCCCCC;
+        }
+
+        /* Intro Section */
+        .intro-section {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .intro-section h2 {
+            font-size: 32px;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+
+        .intro-section p {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .premium-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+            color: #FFD700;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 18px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+            border: 2px solid #FFD700;
+        }
+
+        /* Products Section */
+        .products-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .products-section h2 {
+            text-align: center;
+            font-size: 36px;
+            color: #1a1a1a;
+            margin-bottom: 50px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+            margin-bottom: 60px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .product-header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+            padding: 30px;
+            text-align: center;
+        }
+
+        .product-header h3 {
+            font-size: 28px;
+            color: #FFD700;
+            margin-bottom: 10px;
+            text-shadow: 
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .product-header .emoji {
+            font-size: 40px;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .product-description {
+            font-size: 16px;
+            color: #FFFFFF;
+            line-height: 1.7;
+        }
+
+        .tier-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .badge-standard {
+            background: #FFD700;
+            color: #1a1a1a;
+        }
+
+        .badge-premium {
+            background: #c2185b;
+            color: #FFFFFF;
+        }
+
+        .product-body {
+            padding: 40px;
+        }
+
+        .product-image {
+            max-width: 450px;
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .size-card {
+            background: #f9f9f9;
+            border: 3px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            margin-top: 30px;
+        }
+
+        .size-card:hover {
+            border-color: #FFD700;
+            background: #fffef7;
+            transform: translateY(-3px);
+        }
+
+        .size-card h4 {
+            font-size: 20px;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+        }
+
+        .sizes {
+            font-size: 16px;
+            color: #555;
+            margin: 10px 0;
+        }
+
+        .price {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin: 15px 0;
+        }
+
+        .colors {
+            font-size: 14px;
+            color: #666;
+            margin: 15px 0;
+            line-height: 1.6;
+        }
+
+        .shop-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+            color: #FFD700;
+            padding: 14px 35px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            border: 2px solid #FFD700;
+            text-shadow: 
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .shop-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        .info-callout {
+            background: #fffef7;
+            border-left: 4px solid #FFD700;
+            padding: 20px;
+            margin-top: 25px;
+            border-radius: 8px;
+            font-size: 15px;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* Browse All Designs Section */
+        .browse-all-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+            color: #FFFFFF;
+            padding: 60px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .browse-all-section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #FFD700;
+        }
+
+        .browse-all-section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .browse-button {
+            display: inline-block;
+            background: #FFD700;
+            color: #1a1a1a;
+            padding: 18px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            border: 2px solid #000;
+        }
+
+        .browse-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+        }
+
+        .browse-button .emoji {
+            font-size: 22px;
+            margin-right: 10px;
+        }
+
+        .search-tip {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid #FFD700;
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .search-tip p {
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .tip-icon {
+            font-size: 20px;
+            margin-right: 8px;
+        }
+
+        /* Why You'll Love This Collection Section */
+        .why-love-section {
+            background: #f9f9f9;
+            padding: 60px 20px;
+        }
+
+        .why-love-box {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .why-love-box h2 {
+            font-size: 32px;
+            color: #1a1a1a;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .why-love-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .why-love-box li {
+            font-size: 17px;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .why-love-box .emoji {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+
+        /* Explore Other Collections Section */
+        .explore-section {
+            text-align: center;
+            padding: 40px 20px;
+            background: white;
+        }
+
+        .explore-section h3 {
+            font-size: 28px;
+            color: #1a1a1a;
+        }
+
+        .explore-section h3 a {
+            color: #1a1a1a;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .explore-section h3 a:hover {
+            color: #FFD700;
+        }
+
+        /* Footer Section */
+        .footer-section {
+            background: #1a1a1a;
+            color: #FFD700;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-section h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            text-shadow: 
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .footer-section p {
+            font-size: 14px;
+            color: #CCCCCC;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .intro-section h2 {
+                font-size: 24px;
+            }
+
+            .products-section h2 {
+                font-size: 28px;
+            }
+
+            .product-header h3 {
+                font-size: 22px;
+            }
+
+            .browse-all-section h2 {
+                font-size: 24px;
+            }
+
+            .why-love-box h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <h1><span class="basketball-emoji">🏀</span> FLOOR GENERAL</h1>
+        <p class="tagline">Premium Basketball Mindset Collection</p>
+        <p class="sub-tagline">Where leadership meets strategy. For those who see the whole court.</p>
+    </div>
+
+    <!-- Intro Section -->
+    <div class="intro-section">
+        <h2>The Mental Game</h2>
+        <p>Where basketball IQ meets premium mindset. Floor General celebrates the mental game—leadership, strategy, and the discipline that separates players from commanders. For those who see the whole court and understand that every great play starts with preparation.</p>
+        <span class="premium-badge">PREMIUM COLLECTION</span>
+    </div>
+
+    <!-- Products Section -->
+    <div class="products-section">
+        <h2>6 Premium Designs</h2>
+
+        <!-- Product 1: Bet on Yourself -->
+        <div class="product-card">
+            <div class="product-header">
+                <span class="emoji">🎲</span>
+                <h3>Bet on Yourself</h3>
+                <span class="tier-badge badge-standard">STANDARD EDITION</span>
+                <p class="product-description">The right team changes everything. Bold dice visual with powerful statement - when you bet on yourself, the odds shift in your favor.</p>
+            </div>
+            <div class="product-body">
+                <img src="/assets/floor-general/fg-bet-on-yourself.png" alt="Bet on Yourself - Basketball dice design" class="product-image">
+                <div class="size-card">
+                    <h4>🏀 Premium Tee</h4>
+                    <p class="sizes">Sizes S - 4XL</p>
+                    <p class="price">$27.99</p>
+                    <p class="colors"><strong>Colors:</strong> Asphalt, Black, Army, Military, Steel Blue, Lavender Blue, Navy, Team Purple, Berry, Canvas Red</p>
+                    <a href="https://nerd-hive-official.printify.me/product/24808413/floor-general-bet-on-yourself-the-right-team-changes-everything-premium-tee" class="shop-button" target="_blank">Shop Now</a>
+                </div>
+                <div class="info-callout">
+                    <p><strong>🏀 Standard Edition Floor General Design</strong> - Features honeycomb sleeve icon. Premium Bella Canvas fabric with bold statement design. Perfect for the player who takes calculated risks.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 2: Underestimate Me = Fuel -->
+        <div class="product-card">
+            <div class="product-header">
+                <span class="emoji">⛽</span>
+                <h3>Underestimate Me = Fuel</h3>
+                <span class="tier-badge badge-premium">PREMIUM EDITION</span>
+                <p class="product-description">Turn doubt into power. Gas pump transformation visual showing how underestimation becomes the fuel that drives greatness. Complex visual storytelling.</p>
+            </div>
+            <div class="product-body">
+                <img src="/assets/floor-general/fg-underestimate-me-fuel.png" alt="Underestimate Me = Fuel - Gas pump transformation design" class="product-image">
+                <div class="size-card">
+                    <h4>🏀 Premium Tee</h4>
+                    <p class="sizes">Sizes S - 4XL</p>
+                    <p class="price">$32.99</p>
+                    <p class="colors"><strong>Colors:</strong> Asphalt, Black, Army, Military, Steel Blue, Lavender Blue, Navy, Team Purple, Berry, Canvas Red</p>
+                    <a href="https://nerd-hive-official.printify.me/product/24808412/floor-general-underestimate-fuel-premium-tee" class="shop-button" target="_blank">Shop Now</a>
+                </div>
+                <div class="info-callout">
+                    <p><strong>⭐ Premium Edition Floor General Design</strong> - Intricate gas pump visual metaphor with transformation messaging. Features honeycomb sleeve icon. For those who channel doubt into unstoppable drive.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 3: 2nd Chances Are Self-Made -->
+        <div class="product-card">
+            <div class="product-header">
+                <span class="emoji">🐝</span>
+                <h3>2nd Chances Are Self-Made</h3>
+                <span class="tier-badge badge-premium">PREMIUM EDITION</span>
+                <p class="product-description">Nobody's coming to save you. Muscular bee breaking through honeycomb pattern - powerful visual of self-determination and earned redemption.</p>
+            </div>
+            <div class="product-body">
+                <img src="/assets/floor-general/fg-2nd-chances.png" alt="2nd Chances Are Self-Made - Muscular bee design" class="product-image">
+                <div class="size-card">
+                    <h4>🏀 Premium Tee</h4>
+                    <p class="sizes">Sizes S - 4XL</p>
+                    <p class="price">$32.99</p>
+                    <p class="colors"><strong>Colors:</strong> Asphalt, Black, Army, Military, Steel Blue, Lavender Blue, Navy, Team Purple, Berry, Canvas Red</p>
+                    <a href="https://nerd-hive-official.printify.me/product/24808411/floor-general-2nd-chances-are-self-made-premium-tee" class="shop-button" target="_blank">Shop Now</a>
+                </div>
+                <div class="info-callout">
+                    <p><strong>⭐ Premium Edition Floor General Design</strong> - Complex honeycomb pattern with muscular bee visual. Features honeycomb sleeve icon. For those who create their own second chances through work, not luck.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 4: Film Junkie to Floor General -->
+        <div class="product-card">
+            <div class="product-header">
+                <span class="emoji">🎬</span>
+                <h3>Film Junkie to Floor General</h3>
+                <span class="tier-badge badge-premium">PREMIUM EDITION</span>
+                <p class="product-description">The evolution of basketball IQ. Five-element progression showing the journey from student of the game to commander of the court. Monochrome sophistication.</p>
+            </div>
+            <div class="product-body">
+                <img src="/assets/floor-general/fg-film-junkie.png" alt="Film Junkie to Floor General - Evolution progression design" class="product-image">
+                <div class="size-card">
+                    <h4>🏀 Premium Tee</h4>
+                    <p class="sizes">Sizes S - 4XL</p>
+                    <p class="price">$32.99</p>
+                    <p class="colors"><strong>Colors:</strong> Asphalt, Dark Grey, Black, Canvas Red, Cardinal, Forest, Army, Military Green, Steel Blue, Deep Teal, Columbia Blue, True Royal, Team Purple, Berry</p>
+                    <a href="https://nerd-hive-official.printify.me/product/24808458/floor-general-film-junkie-to-floor-general-premium-basketball-tee" class="shop-button" target="_blank">Shop Now</a>
+                </div>
+                <div class="info-callout">
+                    <p><strong>⭐ Premium Edition Floor General Design</strong> - Most complex design in collection. Five visual elements showing transformation from film study to floor command. Features honeycomb sleeve icon. For the serious student of basketball.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 5: 5-Star Leadership -->
+        <div class="product-card">
+            <div class="product-header">
+                <span class="emoji">⭐</span>
+                <h3>5-Star Leadership</h3>
+                <span class="tier-badge badge-standard">STANDARD EDITION</span>
+                <p class="product-description">The commander. Military-style rank stars with leadership responsibilities list - calling plays, setting tempo, reading defenses, building trust, delivering wins.</p>
+            </div>
+            <div class="product-body">
+                <img src="/assets/floor-general/fg-calling-setting-leading.png" alt="5-Star Leadership - Military rank design" class="product-image">
+                <div class="size-card">
+                    <h4>🏀 Premium Tee</h4>
+                    <p class="sizes">Sizes S - 4XL</p>
+                    <p class="price">$27.99</p>
+                    <p class="colors"><strong>Colors:</strong> Asphalt, Black, Army, Military, Steel Blue, Lavender Blue, Navy, Team Purple, Berry, Canvas Red, Charity Pink</p>
+                    <a href="https://nerd-hive-official.printify.me/product/24808449/floor-general-the-commander-calling-plays-setting-tempo-reading-wins-leadership-premium-tee" class="shop-button" target="_blank">Shop Now</a>
+                </div>
+                <div class="info-callout">
+                    <p><strong>🏀 Standard Edition Floor General Design</strong> - Clean military-style rank visualization with leadership responsibilities. Features honeycomb sleeve icon. For those who understand that leadership is earned, not given.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 6: Every Play Starts Here -->
+        <div class="product-card">
+            <div class="product-header">
+                <span class="emoji">🏀</span>
+                <h3>Every Play Starts Here</h3>
+                <span class="tier-badge badge-standard">STANDARD EDITION</span>
+                <p class="product-description">Court vision. Basketball court diagram with strategic plays mapped out - a visual representation of the mental game and preparation that happens before the ball moves.</p>
+            </div>
+            <div class="product-body">
+                <img src="/assets/floor-general/fg-every-play-starts-here.png" alt="Every Play Starts Here - Basketball court strategy design" class="product-image">
+                <div class="size-card">
+                    <h4>🏀 Premium Tee</h4>
+                    <p class="sizes">Sizes S - 4XL</p>
+                    <p class="price">$27.99</p>
+                    <p class="colors"><strong>Colors:</strong> Asphalt, Black, Army, Military, Steel Blue, Lavender Blue, Navy, Team Purple, Berry, Canvas Red</p>
+                    <a href="https://nerd-hive-official.printify.me/product/24808447/floor-general-every-play-starts-here-basketball-strategy-tee" class="shop-button" target="_blank">Shop Now</a>
+                </div>
+                <div class="info-callout">
+                    <p><strong>🏀 Standard Edition Floor General Design</strong> - Basketball court diagram showing strategic thinking. Features honeycomb sleeve icon. For those who understand that every great play begins with preparation and vision.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Browse All Designs Section -->
+    <div class="browse-all-section">
+        <h2>Or Browse All 6 Designs Together</h2>
+        <p>Want to see all Floor General designs in one place? Click below to visit our store, then use the search trick!</p>
+        
+        <a href="https://nerd-hive-official.printify.me/" class="browse-button" target="_blank">
+            <span class="emoji">🛍️</span> BROWSE ALL FLOOR GENERAL DESIGNS
+        </a>
+
+        <div class="search-tip">
+            <p><span class="tip-icon">💡</span> <strong>Pro Search Tip:</strong> Once our store opens, press <strong>Ctrl+F</strong> (PC) or <strong>Cmd+F</strong> (Mac), then type <em>"Floor General"</em> in the search box. All designs from this collection will highlight instantly! This works on any device and makes finding designs super easy.</p>
+        </div>
+    </div>
+
+    <!-- Why You'll Love This Collection Section -->
+    <div class="why-love-section">
+        <div class="why-love-box">
+            <h2>Why You'll Love This Collection</h2>
+            <ul>
+                <li><span class="emoji">🏀</span> <strong>Premium Mindset:</strong> Designs that celebrate the mental game, leadership, and strategic thinking</li>
+                <li><span class="emoji">🏀</span> <strong>Two Quality Tiers:</strong> Standard Edition ($27.99) for bold statements, Premium Edition ($32.99) for complex visual storytelling</li>
+                <li><span class="emoji">🏀</span> <strong>Authentic Basketball Culture:</strong> Created with input from real hoopers who understand the game</li>
+                <li><span class="emoji">🏀</span> <strong>Size Inclusive:</strong> Sizes S-4XL because everyone deserves premium basketball apparel</li>
+                <li><span class="emoji">🏀</span> <strong>Bella Canvas Quality:</strong> Premium fabric - soft, comfortable, durable tees</li>
+                <li><span class="emoji">🏀</span> <strong>Honeycomb Sleeve Icon:</strong> Every Floor General design features the signature honeycomb detail</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Explore Other Collections Section -->
+    <div class="explore-section">
+        <h3><a href="index.html">← Explore Other Collections</a></h3>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-section">
+        <h3><strong>Wear your nerd. Own your chaos.</strong> 🐝</h3>
+        <p>© 2025 Nerd Hive. All rights reserved.</p>
+    </div>
+
+</body>
+</html>
