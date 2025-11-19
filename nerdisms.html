@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nerdisms Collection | Nerd Hive</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffffff;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: #000000;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo-container {
+            flex: 1;
+        }
+
+        .logo {
+            height: 60px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #FFD700;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #ffffff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #FFD700;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .hero .tagline {
+            font-size: 1.5em;
+            font-weight: 600;
+            color: #FFD700;
+            margin-top: 20px;
+        }
+
+        /* Collections Grid */
+        .collections-section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 40px;
+            color: #1a1a1a;
+        }
+
+        .collections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .collection-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .collection-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .collection-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+
+        .collection-name {
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .collection-desc {
+            font-size: 1em;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            min-height: 60px;
+        }
+
+        .collection-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #1a1a1a;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1em;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
+            border: 2px solid #FFD700;
+        }
+
+        .collection-link:hover {
+            background: linear-gradient(135deg, #FFA500 0%, #FFD700 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(255, 215, 0, 0.4);
+        }
+
+        .coming-soon {
+            background: #e0e0e0;
+            color: #666;
+            cursor: not-allowed;
+            border: 2px solid #ccc;
+        }
+
+        .coming-soon:hover {
+            background: #e0e0e0;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .badge-live {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .badge-coming-soon {
+            background: #FF9800;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            height: 80px;
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            margin: 10px 0;
+            color: #cccccc;
+        }
+
+        .social-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-links a {
+            color: #FFD700;
+            font-size: 1.5em;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #ffffff;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            .collections-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="assets/nerd-hive-logo-horizontal.png" alt="Nerd Hive" class="logo">
+                </a>
+            </div>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="nerdisms.html">NERDISMS</a></li>
+                <li><a href="floor-general.html">FLOOR GENERAL</a></li>
+                <li><a href="mini-hive.html">MINI HIVE</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>NERDISMS COLLECTION</h1>
+            <p>Where nerd life gets real. Text-based humor capturing AI quirks, gaming trash talk, wellness warrior vibes, and everything that makes nerd culture hilariously relatable.</p>
+            <p>Bold statements. Zero apologies. Maximum recognition.</p>
+            <p class="tagline">Wear your nerd. Own your chaos.</p>
+        </div>
+    </section>
+
+    <!-- Collections Grid -->
+    <section class="collections-section">
+        <h2 class="section-title">EXPLORE NERDISMS BY TYPE</h2>
+        
+        <div class="collections-grid">
+            <!-- LIVE COLLECTIONS -->
+            
+            <div class="collection-card">
+                <span class="status-badge badge-live">● LIVE NOW</span>
+                <div class="collection-icon">📚</div>
+                <h3 class="collection-name">BOOK NERD</h3>
+                <p class="collection-desc">For the TBR pile hoarders and "one more chapter" liars. Your reading obsession, perfectly captured.</p>
+                <a href="book-nerd.html" class="collection-link">SHOP BOOK NERD →</a>
+            </div>
+
+            <div class="collection-card">
+                <span class="status-badge badge-live">● LIVE NOW</span>
+                <div class="collection-icon">✍️</div>
+                <h3 class="collection-name">WORD NERD</h3>
+                <p class="collection-desc">Grammar police and vocabulary enthusiasts. Correcting the world since birth.</p>
+                <a href="word-nerd.html" class="collection-link">SHOP WORD NERD →</a>
+            </div>
+
+            <div class="collection-card">
+                <span class="status-badge badge-live">● LIVE NOW</span>
+                <div class="collection-icon">🧠</div>
+                <h3 class="collection-name">BRAIN ROT</h3>
+                <p class="collection-desc">Gen Z approved. SKIBIDI, RIZZ, and Aura Checks for the chronically online generation.</p>
+                <a href="brain-rot.html" class="collection-link">SHOP BRAIN ROT →</a>
+            </div>
+
+            <!-- COMING SOON COLLECTIONS -->
+
+            <div class="collection-card">
+                <span class="status-badge badge-coming-soon">● COMING SOON</span>
+                <div class="collection-icon">🏀</div>
+                <h3 class="collection-name">SPORTS NERD</h3>
+                <p class="collection-desc">Basketball IQ, assists over points, and ball is life. For the strategic athlete in all of us.</p>
+                <a href="#" class="collection-link coming-soon">COMING SOON</a>
+            </div>
+
+            <div class="collection-card">
+                <span class="status-badge badge-coming-soon">● COMING SOON</span>
+                <div class="collection-icon">🎮</div>
+                <h3 class="collection-name">GAMING NERD</h3>
+                <p class="collection-desc">Roblox oof, Fortnite battles, and "pause? there is no pause" energy. Gaming life captured.</p>
+                <a href="#" class="collection-link coming-soon">COMING SOON</a>
+            </div>
+
+            <div class="collection-card">
+                <span class="status-badge badge-coming-soon">● COMING SOON</span>
+                <div class="collection-icon">🤖</div>
+                <h3 class="collection-name">AI-ISMS</h3>
+                <p class="collection-desc">Claude worship, ChatGPT frustrations, and PolyAImory. For those of us living in the AI age.</p>
+                <a href="#" class="collection-link coming-soon">COMING SOON</a>
+            </div>
+
+            <div class="collection-card">
+                <span class="status-badge badge-coming-soon">● COMING SOON</span>
+                <div class="collection-icon">💡</div>
+                <h3 class="collection-name">IDEA NERDS</h3>
+                <p class="collection-desc">2am brainstorms, hyperfocus sessions, and brains that won't stop generating. Creative chaos at its finest.</p>
+                <a href="#" class="collection-link coming-soon">COMING SOON</a>
+            </div>
+
+            <div class="collection-card">
+                <span class="status-badge badge-coming-soon">● COMING SOON</span>
+                <div class="collection-icon">🍄</div>
+                <h3 class="collection-name">WELLNESS NERDS</h3>
+                <p class="collection-desc">Mushrooms made me do it. Box breathing fails. Food is too good. Wellness attempts with hilarious reality.</p>
+                <a href="#" class="collection-link coming-soon">COMING SOON</a>
+            </div>
+
+            <div class="collection-card">
+                <span class="status-badge badge-coming-soon">● COMING SOON</span>
+                <div class="collection-icon">💻</div>
+                <h3 class="collection-name">TECH / CODE-ISMS</h3>
+                <p class="collection-desc">IT support trauma, debugging nightmares, and "have you tried turning it off and on again?" Developer life.</p>
+                <a href="#" class="collection-link coming-soon">COMING SOON</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <img src="assets/nerd-hive-icon.png" alt="Nerd Hive" class="footer-logo">
+            <p><strong>Wear Your Nerd. Own Your Chaos.</strong></p>
+            <p>&copy; 2025 Nerd Hive. Made by nerds, for nerds.</p>
+            <div class="social-links">
+                <a href="https://instagram.com/nerdhiveofficial" target="_blank">📷</a>
+                <a href="https://tiktok.com/@nerdhiveofficial" target="_blank">🎵</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
