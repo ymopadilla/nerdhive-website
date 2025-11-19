@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Nerd Collection | Nerd Hive</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffffff;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: #000000;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo-container {
+            flex: 1;
+        }
+
+        .logo {
+            height: 60px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #FFD700;
+        }
+
+        /* Hero Section - COMPACT */
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            color: #FFD700;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .hero .tagline {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #FFD700;
+            margin-top: 15px;
+        }
+
+        /* Products Grid */
+        .products-section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: #1a1a1a;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .product-card {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+
+        .product-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .product-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .product-images img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+
+        .color-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .color-card {
+            background: #f9f9f9;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .color-card:hover {
+            border-color: #FFD700;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2);
+        }
+
+        .color-header {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+
+        .color-header .emoji {
+            margin-right: 8px;
+        }
+
+        .size-info {
+            font-size: 0.95em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #FFD700;
+            margin: 15px 0;
+        }
+
+        .color-list {
+            font-size: 0.9em;
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .shop-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #1a1a1a;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1em;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
+            border: 2px solid #FFD700;
+        }
+
+        .shop-button:hover {
+            background: linear-gradient(135deg, #FFA500 0%, #FFD700 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(255, 215, 0, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            height: 80px;
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            margin: 10px 0;
+            color: #cccccc;
+        }
+
+        .social-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-links a {
+            color: #FFD700;
+            font-size: 1.5em;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #ffffff;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .color-options {
+                grid-template-columns: 1fr;
+            }
+
+            .product-images {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="assets/nerd-hive-logo-horizontal.png" alt="Nerd Hive" class="logo">
+                </a>
+            </div>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="nerdisms.html">NERDISMS</a></li>
+                <li><a href="floor-general.html">FLOOR GENERAL</a></li>
+                <li><a href="mini-hive.html">MINI HIVE</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>BOOK NERD COLLECTION</h1>
+            <p>For readers who know "just one more chapter" is the biggest lie we tell ourselves at midnight. Where TBR piles have their own TBR piles, and book hoarding is actually library building. If you've ever chosen fictional characters over real people, or if your weekend plans involve pajamas and plot twists—these shirts get it.</p>
+            <p class="tagline">Wear your nerd. Own your chaos.</p>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products-section">
+        <h2 class="section-title">BOOK NERD DESIGNS</h2>
+        
+        <div class="products-grid">
+            <!-- Product 1: Just One More Chapter (Lie) -->
+            <div class="product-card">
+                <h3>Just One More Chapter<br>A Lie I Tell Myself</h3>
+                <div class="product-images">
+                    <img src="assets/booknerd/bn-one-more-chapter-lie-dark.png" alt="Just One More Chapter - Dark">
+                    <img src="assets/booknerd/bn-one-more-chapter-lie-light.png" alt="Just One More Chapter - Light">
+                </div>
+                <div class="color-options">
+                    <div class="color-card">
+                        <div class="color-header"><span class="emoji">🖤</span>Dark Colors</div>
+                        <div class="size-info">Sizes S - 4XL</div>
+                        <div class="price">Starting at $24.99</div>
+                        <div class="color-list"><strong>Colors:</strong> Black, Asphalt, Navy, Team Purple, Berry, Canvas Red</div>
+                        <a href="https://nerd-hive-official.printify.me/product/24808534/book-nerd-just-one-more-chapter-a-lie-i-tell-myself-tee-dark-book-lover-late-night-reading-humor" class="shop-button" target="_blank">Shop Dark Colors</a>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-header"><span class="emoji">🌟</span>Light Colors</div>
+                        <div class="size-info">Sizes S - 4XL</div>
+                        <div class="price">Starting at $24.99</div>
+                        <div class="color-list"><strong>Colors:</strong> White, Natural, Ash, Soft Cream</div>
+                        <a href="https://nerd-hive-official.printify.me/product/24808538/book-nerd-just-one-more-chapter-a-lie-i-tell-myself-tee-light-book-lover-late-night-reading-humor" class="shop-button" target="_blank">Shop Light Colors</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2: One More Chapter (Time Design) -->
+            <div class="product-card">
+                <h3>One More Chapter<br>(Time Design)</h3>
+                <div class="product-images">
+                    <img src="assets/booknerd/bn-one-more-chapter-time-dark.png" alt="One More Chapter Time Design - Dark">
+                    <img src="assets/booknerd/bn-one-more-chapter-time-light.png" alt="One More Chapter Time Design - Light">
+                </div>
+                <div class="color-options">
+                    <div class="color-card">
+                        <div class="color-header"><span class="emoji">🖤</span>Dark Colors</div>
+                        <div class="size-info">Sizes S - 4XL</div>
+                        <div class="price">Starting at $24.99</div>
+                        <div class="color-list"><strong>Colors:</strong> Black, Asphalt, Navy, Team Purple, Berry, Canvas Red</div>
+                        <a href="https://nerd-hive-official.printify.me/product/24808537/book-nerd-one-more-chapter-time-design-tee-dark-funny-reading-humor-for-book-lovers" class="shop-button" target="_blank">Shop Dark Colors</a>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-header"><span class="emoji">🌟</span>Light Colors</div>
+                        <div class="size-info">Sizes S - 4XL</div>
+                        <div class="price">Starting at $24.99</div>
+                        <div class="color-list"><strong>Colors:</strong> White, Natural, Ash, Soft Cream</div>
+                        <a href="https://nerd-hive-official.printify.me/product/24808519/book-nerd-one-more-chapter-tee-time-design-light-funny-reading-humor-for-book-lovers" class="shop-button" target="_blank">Shop Light Colors</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3: My TBR Pile Has a TBR Pile -->
+            <div class="product-card">
+                <h3>My TBR Pile<br>Has a TBR Pile</h3>
+                <div class="product-images">
+                    <img src="assets/booknerd/bn-my-tbr-pile-dark.png" alt="My TBR Pile Has a TBR Pile - Dark">
+                    <img src="assets/booknerd/bn-my-tbr-pile-light.png" alt="My TBR Pile Has a TBR Pile - Light">
+                </div>
+                <div class="color-options">
+                    <div class="color-card">
+                        <div class="color-header"><span class="emoji">🖤</span>Dark Colors</div>
+                        <div class="size-info">Sizes S - 4XL</div>
+                        <div class="price">Starting at $24.99</div>
+                        <div class="color-list"><strong>Colors:</strong> Black, Asphalt, Navy, Team Purple, Berry, Canvas Red</div>
+                        <a href="https://nerd-hive-official.printify.me/product/24808515/book-nerd-my-tbr-pile-has-a-tbr-pile-tee-dark-book-lover-reading-humor" class="shop-button" target="_blank">Shop Dark Colors</a>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-header"><span class="emoji">🌟</span>Light Colors</div>
+                        <div class="size-info">Sizes S - 4XL</div>
+                        <div class="price">Starting at $24.99</div>
+                        <div class="color-list"><strong>Colors:</strong> White, Natural, Ash, Soft Cream</div>
+                        <a href="https://nerd-hive-official.printify.me/product/24808514/book-nerd-my-tbr-pile-has-a-tbr-pile-light-book-lover-t-shirt" class="shop-button" target="_blank">Shop Light Colors</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4: I'm Not Hoarding Books, I'm Building a Library -->
+            <div class="product-card">
+                <h3>I'm Not Hoarding Books<br>I'm Building a Library</h3>
+                <div class="product-images">
+                    <img src="assets/booknerd/bn-im-not-hoarding-books-dark.png" alt="I'm Not Hoarding Books - Dark">
+                    <img src="assets/booknerd/bn-im-not-hoarding-books-light.png" alt="I'm Not Hoarding Books - Light">
+                </div>
+                <div class="color-options">
+                    <div class="color-card">
+                        <div class="color-header"><span class="emoji">🖤</span>Dark Colors</div>
+                        <div class="size-info">Sizes S - 4XL</div>
+                        <div class="price">Starting at $24.99</div>
+                        <div class="color-list"><strong>Colors:</strong> Black, Asphalt, Navy, Team Purple, Berry, Canvas Red</div>
+                        <a href="https://nerd-hive-official.printify.me/product/24808512/book-nerd-im-not-hoarding-books-im-building-a-library-tee-dark-funny-reader-gift" class="shop-button" target="_blank">Shop Dark Colors</a>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-header"><span class="emoji">🌟</span>Light Colors</div>
+                        <div class="size-info">Sizes S - 4XL</div>
+                        <div class="price">Starting at $24.99</div>
+                        <div class="color-list"><strong>Colors:</strong> White, Natural, Ash, Soft Cream</div>
+                        <a href="https://nerd-hive-official.printify.me/product/24808511/book-nerd-im-not-hoarding-books-im-building-a-library-tee-light-funny-reader-gift" class="shop-button" target="_blank">Shop Light Colors</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 5: Sorry, I'm Booked This Weekend -->
+            <div class="product-card">
+                <h3>Sorry, I'm Booked<br>This Weekend</h3>
+                <div class="product-images">
+                    <img src="assets/booknerd/bn-im-booked-this-weekend-dark.png" alt="Sorry I'm Booked This Weekend - Dark">
+                    <img src="assets/booknerd/bn-im-booked-this-weekend-light.png" alt="Sorry I'm Booked This Weekend - Light">
+                </div>
+                <div class="color-options">
+                    <div class="color-card">
+                        <div class="color-header"><span class="emoji">🖤</span>Dark Colors</div>
+                        <div class="size-info">Sizes S - 4XL</div>
+                        <div class="price">Starting at $24.99</div>
+                        <div class="color-list"><strong>Colors:</strong> Black, Asphalt, Navy, Team Purple, Berry, Canvas Red</div>
+                        <a href="https://nerd-hive-official.printify.me/product/24808504/book-nerd-sorry-im-booked-this-weekend-tee-dark-funny-introvert-reader-gift" class="shop-button" target="_blank">Shop Dark Colors</a>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-header"><span class="emoji">🌟</span>Light Colors</div>
+                        <div class="size-info">Sizes S - 4XL</div>
+                        <div class="price">Starting at $24.99</div>
+                        <div class="color-list"><strong>Colors:</strong> White, Natural, Ash, Soft Cream</div>
+                        <a href="https://nerd-hive-official.printify.me/product/24808505/book-nerd-sorry-im-booked-this-weekend-tee-light-funny-introvert-reader-gift" class="shop-button" target="_blank">Shop Light Colors</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 6: I Have Too Many Books Said No Book Nerd Ever -->
+            <div class="product-card">
+                <h3>I Have Too Many Books<br>Said No Book Nerd Ever</h3>
+                <div class="product-images">
+                    <img src="assets/booknerd/bn-i-have-too-many-books-dark.png" alt="I Have Too Many Books - Dark">
+                    <img src="assets/booknerd/bn-i-have-too-many-books-light.png" alt="I Have Too Many Books - Light">
+                </div>
+                <div class="color-options">
+                    <div class="color-card">
+                        <div class="color-header"><span class="emoji">🖤</span>Dark Colors</div>
+                        <div class="size-info">Sizes S - 4XL</div>
+                        <div class="price">Starting at $24.99</div>
+                        <div class="color-list"><strong>Colors:</strong> Black, Asphalt, Navy, Team Purple, Berry, Canvas Red</div>
+                        <a href="https://nerd-hive-official.printify.me/product/24808500/book-nerd-i-have-too-many-books-said-no-book-nerd-ever-dark-book-lover-reading-gift-tee" class="shop-button" target="_blank">Shop Dark Colors</a>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-header"><span class="emoji">🌟</span>Light Colors</div>
+                        <div class="size-info">Sizes S - 4XL</div>
+                        <div class="price">Starting at $24.99</div>
+                        <div class="color-list"><strong>Colors:</strong> White, Natural, Ash, Soft Cream</div>
+                        <a href="https://nerd-hive-official.printify.me/product/24808496/book-nerd-i-have-too-many-books-said-no-book-nerd-ever-light-book-lover-reading-gift-tee" class="shop-button" target="_blank">Shop Light Colors</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <img src="assets/nerd-hive-icon.png" alt="Nerd Hive" class="footer-logo">
+            <p><strong>Wear Your Nerd. Own Your Chaos.</strong></p>
+            <p>&copy; 2025 Nerd Hive. Made by nerds, for nerds.</p>
+            <div class="social-links">
+                <a href="https://instagram.com/nerdhiveofficial" target="_blank">📷</a>
+                <a href="https://tiktok.com/@nerdhiveofficial" target="_blank">🎵</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
