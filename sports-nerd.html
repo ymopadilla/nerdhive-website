@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Nerd Collection | Nerd Hive</title>
+    <meta name="description" content="Fantasy sports obsessives, betting strategists, and couch coaches. For the fans who take stats way too seriously.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            background: #FFFFFF;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .nav {
+            background: #1a1a1a;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 900;
+            color: #FFD700;
+            letter-spacing: 2px;
+            text-decoration: none;
+            text-shadow: 
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000,
+                -2px 0 0 #000,
+                2px 0 0 #000,
+                0 -2px 0 #000,
+                0 2px 0 #000;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #FFFFFF;
+            text-decoration: none;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #FFD700;
+        }
+        
+        .shop-btn {
+            background: #FFD700;
+            color: #1a1a1a !important;
+            padding: 12px 30px;
+            border-radius: 4px;
+            border: 2px solid #000;
+            transition: transform 0.3s, box-shadow 0.3s;
+            font-weight: 900;
+        }
+        
+        .shop-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+        }
+
+        /* Header */
+        .collection-header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+            padding: 40px 50px;
+            text-align: center;
+            border-bottom: 5px solid #FFD700;
+        }
+        
+        .collection-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .collection-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 48px;
+            font-weight: 900;
+            color: #FFD700;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+            text-shadow: 
+                -2px -2px 0 #000,
+                2px -2px 0 #000,
+                -2px 2px 0 #000,
+                2px 2px 0 #000;
+        }
+        
+        .collection-subtitle {
+            font-size: 24px;
+            color: #FFFFFF;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 80px 50px;
+            background: #F5F5F5;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .product-card {
+            background: #FFFFFF;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 3px solid #1a1a1a;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            background: #1a1a1a;
+        }
+        
+        .product-info {
+            padding: 30px;
+        }
+        
+        .product-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+        
+        .product-desc {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .product-price {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 900;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+        
+        .buy-button {
+            display: block;
+            width: 100%;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 900;
+            padding: 18px;
+            background: #FFD700;
+            color: #1a1a1a;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 6px;
+            border: 3px solid #000;
+            transition: all 0.3s;
+            letter-spacing: 1px;
+        }
+        
+        .buy-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        /* Email Signup */
+        .email-signup {
+            background: #1a1a1a;
+            padding: 80px 50px;
+            text-align: center;
+        }
+        
+        .email-signup h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
+            font-weight: 900;
+            color: #FFD700;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            text-shadow: 
+                -2px -2px 0 #000,
+                2px -2px 0 #000,
+                -2px 2px 0 #000,
+                2px 2px 0 #000;
+        }
+        
+        .email-subtitle {
+            color: #FFFFFF;
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+        
+        .email-form {
+            display: flex;
+            gap: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+            justify-content: center;
+        }
+        
+        .email-form input {
+            flex: 1;
+            padding: 18px;
+            border: 2px solid #FFD700;
+            border-radius: 4px;
+            font-size: 16px;
+            min-width: 300px;
+        }
+        
+        .email-form button {
+            font-family: 'Montserrat', sans-serif;
+            padding: 18px 40px;
+            background: #FFD700;
+            color: #1a1a1a;
+            border: 2px solid #000;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 900;
+            cursor: pointer;
+            transition: all 0.3s;
+            letter-spacing: 1px;
+        }
+        
+        .email-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        /* Footer */
+        .footer {
+            background: #F5F5F5;
+            padding: 40px 50px;
+            text-align: center;
+            border-top: 3px solid #1a1a1a;
+        }
+        
+        .footer-logo img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .social-links a {
+            color: #1a1a1a;
+            font-size: 28px;
+            transition: color 0.3s, transform 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #FFD700;
+            transform: scale(1.2);
+        }
+        
+        .footer-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            color: #666;
+            font-weight: 700;
+        }
+
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #FFD700;
+            font-size: 28px;
+            cursor: pointer;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav {
+                padding: 15px 20px;
+            }
+            
+            .nav-brand {
+                font-size: 20px;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #1a1a1a;
+                flex-direction: column;
+                padding: 20px;
+                gap: 20px;
+                border-top: 2px solid #FFD700;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .collection-header {
+                padding: 30px 20px;
+            }
+            
+            .collection-title {
+                font-size: 32px;
+            }
+            
+            .collection-subtitle {
+                font-size: 16px;
+            }
+            
+            .collection-icon {
+                font-size: 32px;
+                gap: 15px;
+            }
+            
+            .products {
+                padding: 40px 20px;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .email-signup {
+                padding: 40px 20px;
+            }
+            
+            .email-form {
+                flex-direction: column;
+            }
+            
+            .email-form input {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-logo">
+            <a href="index.html" class="nav-brand">NERD HIVE</a>
+        </div>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">HOME</a>
+            <a href="nerdisms.html">NERDISMS</a>
+            <a href="coming-soon.html">COMING SOON</a>
+            <a href="about.html">ABOUT</a>
+            <a href="https://nerd-hive-official.printify.me/" target="_blank" class="shop-btn">SHOP NOW</a>
+        </div>
+    </nav>
+
+    <!-- Collection Header -->
+    <section class="collection-header">
+        <div class="collection-icon">
+            <span>🏈</span>
+            <span>🏀</span>
+            <span>⚽</span>
+        </div>
+        <h1 class="collection-title">SPORTS NERD</h1>
+        <p class="collection-subtitle">Fantasy sports obsessives, betting strategists, and couch coaches. For the fans who take stats way too seriously.</p>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products">
+        <div class="products-grid">
+            <!-- Product 1: Professional Couch Quarterback -->
+            <div class="product-card">
+                <img src="assets/sports-nerd/sn-pro-couch-quarterback.png" alt="Professional Couch Quarterback" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Professional Couch Quarterback</h3>
+                    <p class="product-desc">Weekend analyst. Maximum comfort. Zero credentials required. For the sports fan who knows they could coach better from the couch.</p>
+                    <p style="font-size: 14px; color: #666; margin-bottom: 15px;"><strong>Available Colors:</strong> Asphalt, Black, Vintage Black, Military Green, Navy, Canvas Red</p>
+                    <div class="product-price">$24.99</div>
+                    <a href="https://nerd-hive-official.printify.me/product/25016930/sports-nerd-couch-quarterback-shirt-funny-sports-fan-couch-coach-gift-for-football-lovers" target="_blank" class="buy-button">BUY NOW →</a>
+                </div>
+            </div>
+
+            <!-- Product 2: Armchair Quarterback -->
+            <div class="product-card">
+                <img src="assets/sports-nerd/sn-armchair-quarterback.png" alt="Armchair Quarterback" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Armchair Quarterback</h3>
+                    <p class="product-desc">Fully reclined. Fully committed. Game day is serious business. For football fanatics who take their armchair quarterback status seriously.</p>
+                    <p style="font-size: 14px; color: #666; margin-bottom: 15px;"><strong>Available Colors:</strong> Asphalt, Black, Vintage Black, Military Green, Navy, Canvas Red</p>
+                    <div class="product-price">$24.99</div>
+                    <a href="https://nerd-hive-official.printify.me/product/25017116/sports-nerd-armchair-quarterback-shirt-funny-football-fan-recliner-coach-gift" target="_blank" class="buy-button">BUY NOW →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Email Signup -->
+    <section class="email-signup">
+        <h3>JOIN THE HIVE</h3>
+        <p class="email-subtitle">Get launch updates, new drops, and exclusive designs delivered to your inbox.</p>
+        <form class="email-form" action="https://formspree.io/f/xyznnbvv" method="POST">
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <button type="submit">SUBSCRIBE</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-logo">
+            <img src="logo-square.png" alt="Nerd Hive Icon">
+        </div>
+        
+        <div class="social-links">
+            <a href="https://instagram.com/nerdhiveofficial" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://tiktok.com/@nerdhiveofficial" target="_blank" aria-label="TikTok">
+                <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61582089479308" target="_blank" aria-label="Facebook">
+                <i class="fab fa-facebook"></i>
+            </a>
+        </div>
+        
+        <div class="footer-text">
+            © 2025 Nerd Hive™. All rights reserved. | Smart is always in style.
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
