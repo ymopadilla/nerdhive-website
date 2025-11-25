@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nerd Hive Essentials collection featuring logo tees, founding member shirts, and brand basics. Entry-level pricing at $19.99. Perfect gifts for nerds.">
+    <title>Essentials Collection | Nerd Hive</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background: #ffffff;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        /* Skip to Main Content Link (Accessibility) */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #FFD700;
+            color: #1a1a1a;
+            padding: 8px 16px;
+            text-decoration: none;
+            font-weight: 700;
+            z-index: 9999;
+            border-radius: 0 0 4px 0;
+        }
+
+        .skip-link:focus {
+            top: 0;
+            outline: 3px solid #FFD700;
+            outline-offset: 2px;
+        }
+
+        /* Focus Indicators for Keyboard Navigation */
+        a:focus,
+        button:focus {
+            outline: 3px solid #FFD700;
+            outline-offset: 2px;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Navigation - COMPACT */
+        nav {
+            background: #1a1a1a;
+            padding: 12px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 32px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-menu-toggle:hover {
+            color: #FFD700;
+        }
+
+        .nav-logo img {
+            height: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #ffffff;
+            text-decoration: none;
+            letter-spacing: 1.5px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #FFD700;
+        }
+
+        .shop-btn {
+            background: #FFD700;
+            color: #1a1a1a !important;
+            padding: 12px 30px;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .shop-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+        }
+
+        /* Hero Section - COMPACT */
+        .hero {
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+            color: #ffffff;
+            padding: 25px 50px;
+            text-align: center;
+        }
+
+        .hero-icons {
+            font-size: 36px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            font-weight: 900;
+            color: #FFD700;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .hero-description {
+            font-size: 16px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto 10px;
+            color: #ffffff;
+        }
+
+        .hero-tagline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #FFD700;
+            margin-top: 5px;
+        }
+
+        /* Products Section */
+        .products-section {
+            max-width: 1400px;
+            margin: 30px auto;
+            padding: 0 50px;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #1a1a1a;
+        }
+
+        /* Product Grid - For single-image products */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        /* Product Card - Single Image Version */
+        .product-card {
+            background: #f9f9f9;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .product-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 900;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+
+        .product-card img {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .size-info {
+            font-size: 16px;
+            color: #666;
+            margin: 10px 0;
+        }
+
+        .price {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 900;
+            color: #FFD700;
+            margin: 15px 0;
+            text-shadow: 
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .color-list {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .limited-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+            color: #ffffff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .shop-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #1a1a1a;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 16px;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+            border: 2px solid #FFD700;
+        }
+
+        .shop-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5);
+            background: linear-gradient(135deg, #FFA500 0%, #FFD700 100%);
+        }
+
+        /* Why You'll Love This Section */
+        .why-love-section {
+            background: #f5f5f5;
+            padding: 60px 50px;
+            margin: 60px 0;
+        }
+
+        .why-love-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .why-love-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #1a1a1a;
+        }
+
+        .why-love-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        .why-love-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .why-love-item .emoji {
+            font-size: 32px;
+            min-width: 40px;
+        }
+
+        .why-love-item h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 5px;
+        }
+
+        .why-love-item p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* Browse All Section */
+        .browse-section {
+            background: #ffffff;
+            padding: 60px 50px;
+            text-align: center;
+        }
+
+        .browse-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+
+        .browse-section p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .browse-button {
+            display: inline-block;
+            background: #FFD700;
+            color: #1a1a1a;
+            padding: 20px 50px;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 900;
+            border-radius: 8px;
+            transition: all 0.3s;
+            border: 3px solid #000;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+        }
+
+        .browse-button:hover {
+            background: #FFC700;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        .search-tip {
+            background: #fffef7;
+            border-left: 5px solid #FFD700;
+            padding: 25px;
+            margin: 30px auto 0;
+            max-width: 900px;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .search-tip h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .search-tip p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .search-tip strong {
+            color: #1a1a1a;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: #ffffff;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .footer-tagline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #FFD700;
+            margin-bottom: 20px;
+        }
+
+        .footer-text {
+            font-size: 14px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 15px;
+        }
+
+        .footer-links {
+            margin-top: 15px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #FFD700;
+            text-decoration: underline;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+                position: relative;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #1a1a1a;
+                flex-direction: column;
+                padding: 20px;
+                gap: 20px;
+                border-top: 2px solid #FFD700;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            }
+
+            .nav-links.mobile-open {
+                display: flex;
+            }
+
+            .nav-links li {
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 10px;
+            }
+
+            .shop-btn {
+                display: block;
+                text-align: center;
+            }
+
+            .hero {
+                padding: 20px 20px;
+            }
+
+            .hero-icons {
+                font-size: 28px;
+                gap: 10px;
+            }
+
+            .hero h1 {
+                font-size: 24px;
+            }
+
+            .hero-description {
+                font-size: 14px;
+            }
+
+            .products-section {
+                padding: 0 20px;
+                margin: 20px auto;
+            }
+
+            .section-title {
+                font-size: 22px;
+                margin-bottom: 20px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-card {
+                padding: 20px;
+            }
+
+            .product-card h3 {
+                font-size: 18px;
+            }
+
+            .why-love-section,
+            .browse-section {
+                padding: 40px 20px;
+            }
+
+            .why-love-section h2,
+            .browse-section h2 {
+                font-size: 28px;
+            }
+
+            .search-tip {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to Main Content (Accessibility) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header with Navigation -->
+    <header>
+        <nav aria-label="Main navigation">
+            <div class="nav-logo">
+                <a href="index.html" aria-label="Nerd Hive Home">
+                    <img src="assets/nerd-hive-logo-horizontal.png" alt="Nerd Hive Logo">
+                </a>
+            </div>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger-icon">☰</span>
+            </button>
+            
+            <ul class="nav-links" id="main-nav">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="nerdisms.html">NERDISMS</a></li>
+                <li><a href="essentials.html">ESSENTIALS</a></li>
+                <li><a href="mini-hive.html">MINI HIVE</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="https://nerd-hive-official.printify.me/" target="_blank" rel="noopener noreferrer" class="shop-btn">SHOP ALL</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-icons">
+            <span>🐝</span>
+            <span>👕</span>
+            <span>🐝</span>
+        </div>
+        <h1>ESSENTIALS COLLECTION</h1>
+        <p class="hero-description">The basics done right. Clean logo tees, founding member exclusives, and brand essentials at our entry-level price point. Simple. Classic. Nerd Hive.</p>
+        <p class="hero-tagline">Wear your nerd. Own your chaos.</p>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <h2 class="section-title">NERD HIVE ESSENTIALS — $19.99</h2>
+
+        <div class="products-grid">
+
+            <!-- Product 1: Classic Logo Tee -->
+            <div class="product-card">
+                <h3>Classic Logo Tee — Smart Is Always in Style</h3>
+                <img src="assets/essentials/ess-full-logo-center-chest.png" alt="Nerd Hive Essentials Classic Logo Tee with Smart is Always in Style tagline">
+                <p class="size-info">Sizes S - 4XL</p>
+                <p class="price">$19.99</p>
+                <p class="color-list"><strong>Colors:</strong> Asphalt, Black, Canvas Red, Navy</p>
+                <a href="https://nerd-hive-official.printify.me/product/24808420/essentials-classic-logo-tee-smart-is-always-in-style" class="shop-button" target="_blank" rel="noopener noreferrer">SHOP NOW</a>
+            </div>
+
+            <!-- Product 2: Icon Tee -->
+            <div class="product-card">
+                <h3>Nerd Hive Icon Tee — Premium Logo</h3>
+                <img src="assets/essentials/ess-icon-small-right.png" alt="Nerd Hive Essentials Icon Tee with small right chest logo">
+                <p class="size-info">Sizes S - 4XL</p>
+                <p class="price">$19.99</p>
+                <p class="color-list"><strong>Colors:</strong> Asphalt, Black, Canvas Red, Navy</p>
+                <a href="https://nerd-hive-official.printify.me/product/24808418/essentials-nerd-hive-icon-tee-premium-logo-shirt" class="shop-button" target="_blank" rel="noopener noreferrer">SHOP NOW</a>
+            </div>
+
+            <!-- Product 3: EST. 2025 -->
+            <div class="product-card">
+                <h3>NERD HIVE EST. 2025 — Founding Year Pride</h3>
+                <img src="assets/essentials/ess-logo-est2025.png" alt="Nerd Hive EST. 2025 Founding Year Pride Tee">
+                <p class="size-info">Sizes S - 4XL</p>
+                <p class="price">$19.99</p>
+                <p class="color-list"><strong>Colors:</strong> Asphalt, Black, Canvas Red, Navy</p>
+                <a href="https://nerd-hive-official.printify.me/product/24808414/essentials-nerd-hive-est-2025-founding-year-pride-tee" class="shop-button" target="_blank" rel="noopener noreferrer">SHOP NOW</a>
+            </div>
+
+            <!-- Product 4: Original Hive 2025 - Limited Edition -->
+            <div class="product-card">
+                <span class="limited-badge">⭐ LIMITED EDITION</span>
+                <h3>Original Hive 2025 — Charter Member</h3>
+                <img src="assets/essentials/ess-original-hive-2025.png" alt="Nerd Hive Original Hive 2025 Limited Edition Charter Member Tee">
+                <p class="size-info">Sizes S - 4XL</p>
+                <p class="price">$19.99</p>
+                <p class="color-list"><strong>Colors:</strong> Asphalt, Black, Canvas Red, Navy, Military Green, Sage, Aqua, Steel Blue, Columbia Blue, Team Purple, Berry, Orchid</p>
+                <a href="https://nerd-hive-official.printify.me/product/24808419/essentials-original-hive-2025-limited-edition-charter-member-tee" class="shop-button" target="_blank" rel="noopener noreferrer">SHOP NOW</a>
+            </div>
+
+            <!-- Product 5: Founding Nerd 2025 - Limited Edition -->
+            <div class="product-card">
+                <span class="limited-badge">⭐ LIMITED EDITION</span>
+                <h3>Founding Nerd 2025 — Limited Edition</h3>
+                <img src="assets/essentials/ess-founding-nerd-2025.png" alt="Nerd Hive Founding Nerd 2025 Limited Edition Tee">
+                <p class="size-info">Sizes S - 4XL</p>
+                <p class="price">$19.99</p>
+                <p class="color-list"><strong>Colors:</strong> Asphalt, Black, Canvas Red, Navy, Military Green, Sage, Aqua, Steel Blue, Columbia Blue, Team Purple, Berry, Orchid</p>
+                <a href="https://nerd-hive-official.printify.me/product/24808424/essentials-founding-nerd-2025-limited-edition-tee" class="shop-button" target="_blank" rel="noopener noreferrer">SHOP NOW</a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Why You'll Love This Collection -->
+    <section class="why-love-section">
+        <div class="why-love-content">
+            <h2>Why You'll Love This Collection</h2>
+            <div class="why-love-list">
+                <div class="why-love-item">
+                    <span class="emoji">💰</span>
+                    <div>
+                        <h4>Entry-Level Pricing</h4>
+                        <p>All Essentials are just $19.99—our most affordable collection. Same premium Bella Canvas quality, same great fit, friendlier price point. Perfect for stocking up.</p>
+                    </div>
+                </div>
+                <div class="why-love-item">
+                    <span class="emoji">🐝</span>
+                    <div>
+                        <h4>Clean, Classic Designs</h4>
+                        <p>Sometimes you just want a great logo tee. No elaborate designs, no complicated messages—just clean Nerd Hive branding that says "I'm part of the hive."</p>
+                    </div>
+                </div>
+                <div class="why-love-item">
+                    <span class="emoji">⭐</span>
+                    <div>
+                        <h4>Founding Member Exclusives</h4>
+                        <p>The 2025 limited editions are your badge of honor. Be one of the first members of the hive—these shirts will become collectibles as the brand grows.</p>
+                    </div>
+                </div>
+                <div class="why-love-item">
+                    <span class="emoji">🎁</span>
+                    <div>
+                        <h4>Perfect Gift Option</h4>
+                        <p>Not sure what collection fits your nerd? Essentials work for everyone. Great entry point for someone new to the hive or as a gift for any occasion.</p>
+                    </div>
+                </div>
+                <div class="why-love-item">
+                    <span class="emoji">👕</span>
+                    <div>
+                        <h4>Premium Quality</h4>
+                        <p>Same Bella Canvas blanks as our premium collections. Soft, comfortable, durable. Multiple color options including exclusive colors for limited editions. Sizes S-4XL.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Browse All Designs -->
+    <section class="browse-section">
+        <h2>Browse All Essentials</h2>
+        <p>Want to see every Essentials design in our store? Click below!</p>
+        <a href="https://nerd-hive-official.printify.me/" target="_blank" rel="noopener noreferrer" class="browse-button">🛒 SHOP ALL ESSENTIALS</a>
+        
+        <div class="search-tip">
+            <h3>💡 Pro Search Tip:</h3>
+            <p>Once in our store, press <strong>Ctrl+F</strong> (PC) or <strong>Cmd+F</strong> (Mac), then type <strong>"Essentials"</strong> in the search box. All designs from this collection will highlight instantly!</p>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <p class="footer-tagline">Wear your nerd. Own your chaos. 🐝</p>
+        <p class="footer-text">© 2025 Nerd Hive™. All rights reserved.</p>
+        <p class="footer-links">
+            <a href="accessibility.html">Accessibility</a>
+        </p>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuToggle.addEventListener('click', function() {
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
+            navLinks.classList.toggle('mobile-open');
+            
+            // Change icon
+            const icon = this.querySelector('.hamburger-icon');
+            icon.textContent = isExpanded ? '☰' : '✕';
+        });
+    </script>
+</body>
+</html>
