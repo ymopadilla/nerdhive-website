@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nerd Hive | Celebrating Every Type of Nerd</title>
+    <meta name="description" content="Premium apparel celebrating every type of nerd. From gaming to STEM, AI quirks to wellness warriors - shirts that actually get it.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            background: #FFFFFF;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        /* Scrolling Announcement Banner */
+        .announcement-banner {
+            background: linear-gradient(90deg, #165B33 0%, #BB2528 50%, #165B33 100%);
+            color: #FFD700;
+            padding: 12px 0;
+            overflow: hidden;
+            position: relative;
+            border-bottom: 2px solid #FFD700;
+        }
+
+        .announcement-content {
+            display: flex;
+            animation: scroll 20s linear infinite;
+            white-space: nowrap;
+        }
+
+        .announcement-item {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 0 50px;
+            text-shadow: 
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .announcement-content:hover {
+            animation-play-state: paused;
+        }
+        
+        /* Navigation */
+        .nav {
+            background: #1a1a1a;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 900;
+            color: #FFD700;
+            letter-spacing: 2px;
+            text-shadow: 
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000,
+                -2px 0 0 #000,
+                2px 0 0 #000,
+                0 -2px 0 #000,
+                0 2px 0 #000;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #FFFFFF;
+            text-decoration: none;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #FFD700;
+        }
+        
+        .shop-btn {
+            background: #FFD700;
+            color: #1a1a1a !important;
+            padding: 12px 30px;
+            border-radius: 4px;
+            border: 2px solid #000;
+            transition: transform 0.3s, box-shadow 0.3s;
+            font-weight: 900;
+        }
+        
+        .shop-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+        }
+
+        .coming-soon-nav {
+            color: #FFD700 !important;
+            border: 2px solid #FFD700;
+            padding: 8px 20px;
+            border-radius: 4px;
+            transition: all 0.3s;
+            text-shadow: 
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .coming-soon-nav:hover {
+            background: #FFD700;
+            color: #1a1a1a !important;
+            text-shadow: none;
+        }
+        
+        /* Hero Section - STREAMLINED */
+        .hero {
+            background: #F5F5F5;
+            padding: 40px 50px;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 42px;
+            font-weight: 900;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .highlight {
+            color: #FFD700;
+            text-shadow: 
+                -2px -2px 0 #000,
+                2px -2px 0 #000,
+                -2px 2px 0 #000,
+                2px 2px 0 #000;
+        }
+        
+        .hero-tagline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 40px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta-button {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 900;
+            padding: 20px 50px;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s;
+            letter-spacing: 2px;
+            border: 3px solid #000;
+        }
+        
+        .cta-button:first-child {
+            background: #FFD700;
+            color: #1a1a1a;
+        }
+        
+        .cta-button:first-child:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+        }
+        
+        .cta-button-secondary {
+            background: #1a1a1a;
+            color: #FFD700;
+        }
+        
+        .cta-button-secondary:hover {
+            background: #333;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Collections Grid */
+        .collections {
+            padding: 80px 50px;
+            background: #FFFFFF;
+        }
+        
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 42px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #1a1a1a;
+        }
+        
+        .collections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .collection-card {
+            background: #F5F5F5;
+            padding: 40px;
+            border-radius: 8px;
+            border: 3px solid #1a1a1a;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .collection-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Featured Holiday Card */
+        .collection-card.featured-holiday {
+            background: linear-gradient(135deg, #165B33 0%, #1a5c34 100%);
+            border: 3px solid #BB2528;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .collection-card.featured-holiday::before {
+            content: "🎁 ❄️ 🎄";
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 14px;
+            opacity: 0.5;
+        }
+
+        .collection-card.featured-holiday .collection-name,
+        .collection-card.featured-holiday .collection-desc {
+            color: #FFFFFF;
+        }
+
+        .collection-card.featured-holiday .collection-desc {
+            color: #E8E8E8;
+        }
+
+        .new-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #BB2528 0%, #FF4500 100%);
+            color: #FFFFFF;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-left: 8px;
+            vertical-align: middle;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .collection-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+        
+        .collection-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+            letter-spacing: 1px;
+        }
+        
+        .collection-desc {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        
+        .collection-link {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 900;
+            color: #FFD700;
+            text-decoration: none;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+            text-shadow: 
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+        
+        .collection-link:hover {
+            color: #1a1a1a;
+            text-shadow: none;
+        }
+
+        .collection-card.featured-holiday .collection-link:hover {
+            color: #FFD700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+        
+        /* Email Signup */
+        .email-signup {
+            background: #1a1a1a;
+            padding: 80px 50px;
+            text-align: center;
+        }
+        
+        .email-signup h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
+            font-weight: 900;
+            color: #FFD700;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            text-shadow: 
+                -2px -2px 0 #000,
+                2px -2px 0 #000,
+                -2px 2px 0 #000,
+                2px 2px 0 #000;
+        }
+        
+        .email-subtitle {
+            color: #FFFFFF;
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+        
+        .email-form {
+            display: flex;
+            gap: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+            justify-content: center;
+        }
+        
+        .email-form input {
+            flex: 1;
+            padding: 18px;
+            border: 2px solid #FFD700;
+            border-radius: 4px;
+            font-size: 16px;
+            min-width: 300px;
+        }
+        
+        .email-form button {
+            font-family: 'Montserrat', sans-serif;
+            padding: 18px 40px;
+            background: #FFD700;
+            color: #1a1a1a;
+            border: 2px solid #000;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 900;
+            cursor: pointer;
+            transition: all 0.3s;
+            letter-spacing: 1px;
+        }
+        
+        .email-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+        }
+        
+        /* Footer */
+        .footer {
+            background: #F5F5F5;
+            padding: 40px 50px;
+            text-align: center;
+            border-top: 3px solid #1a1a1a;
+        }
+        
+        .footer-logo img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .social-links a {
+            color: #1a1a1a;
+            font-size: 28px;
+            transition: color 0.3s, transform 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #FFD700;
+            transform: scale(1.2);
+        }
+        
+        .footer-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            color: #666;
+            font-weight: 700;
+        }
+        
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #FFD700;
+            font-size: 28px;
+            cursor: pointer;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav {
+                padding: 15px 20px;
+            }
+            
+            .nav-brand {
+                font-size: 20px;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #1a1a1a;
+                flex-direction: column;
+                padding: 20px;
+                gap: 20px;
+                border-top: 2px solid #FFD700;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+
+            .logo-thanksgiving-section {
+                flex-direction: column;
+                gap: 30px;
+                padding: 40px 20px;
+            }
+
+            .logo-side {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .thanksgiving-side h2 {
+                font-size: 22px;
+            }
+
+            .thanksgiving-side p {
+                font-size: 16px;
+            }
+            
+            .hero {
+                padding: 40px 20px;
+            }
+            
+            .hero-title {
+                font-size: 28px;
+            }
+            
+            .hero-tagline {
+                font-size: 20px;
+            }
+            
+            .cta-button {
+                font-size: 16px;
+                padding: 15px 30px;
+            }
+            
+            .collections {
+                padding: 40px 20px;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .collections-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .about {
+                padding: 40px 20px;
+            }
+            
+            .email-signup {
+                padding: 40px 20px;
+            }
+            
+            .email-form {
+                flex-direction: column;
+            }
+            
+            .email-form input {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Scrolling Announcement Banner -->
+    <div class="announcement-banner">
+        <div class="announcement-content">
+            <!-- First set of messages -->
+            <div class="announcement-item">🎄 NEW! Holiday Nerdisms Collection - Christmas & Thanksgiving! 🎁</div>
+            <div class="announcement-item">🎁 Gift Wrapping Struggles? We Made Shirts About That!</div>
+            <div class="announcement-item">🐝 NEW! Mini Hive Kids Collection - Designed by 9-Year-Old Nylah!</div>
+            <div class="announcement-item">❄️ New Holiday Designs Just Dropped! ❄️</div>
+            <div class="announcement-item">WEAR YOUR NERD. OWN YOUR CHAOS.</div>
+            <!-- Duplicate set for seamless loop -->
+            <div class="announcement-item">🎄 NEW! Holiday Nerdisms Collection - Christmas & Thanksgiving! 🎁</div>
+            <div class="announcement-item">🎁 Gift Wrapping Struggles? We Made Shirts About That!</div>
+            <div class="announcement-item">🐝 NEW! Mini Hive Kids Collection - Designed by 9-Year-Old Nylah!</div>
+            <div class="announcement-item">❄️ New Holiday Designs Just Dropped! ❄️</div>
+            <div class="announcement-item">WEAR YOUR NERD. OWN YOUR CHAOS.</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-logo">
+            <div class="nav-brand">NERD HIVE</div>
+        </div>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <div class="nav-links" id="navLinks">
+            <a href="#home">HOME</a>
+            <a href="nerdisms.html">NERDISMS</a>
+            <a href="coming-soon.html" class="coming-soon-nav">🚀 COMING SOON</a>
+            <a href="about.html">ABOUT</a>
+            <a href="https://nerd-hive-official.printify.me/" target="_blank" class="shop-btn">SHOP NOW</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section - STREAMLINED -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title">FOR EVERY <span class="highlight">TYPE OF NERD</span></h1>
+            
+            <p class="hero-tagline">Wear your nerd. Own your chaos.</p>
+            
+            <div class="cta-buttons">
+                <a href="https://nerd-hive-official.printify.me/" target="_blank" class="cta-button">SHOP THE HIVE</a>
+                <a href="coming-soon.html" class="cta-button cta-button-secondary">SEE WHAT'S COMING 🚀</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collections Preview -->
+    <section class="collections" id="collections">
+        <h2 class="section-title">EXPLORE THE HIVE</h2>
+        
+        <div class="collections-grid">
+            <div class="collection-card featured-holiday">
+                <div class="collection-icon">🎄</div>
+                <h3 class="collection-name">HOLIDAY NERDISMS <span class="new-badge">NEW!</span></h3>
+                <p class="collection-desc">Christmas stealth missions, gift wrapping geometry, and December calorie math. Holiday humor for the whole family - plus Thanksgiving classics!</p>
+                <a href="holiday.html" class="collection-link">SHOP HOLIDAY COLLECTION →</a>
+            </div>
+            
+            <div class="collection-card">
+                <div class="collection-icon">📚</div>
+                <h3 class="collection-name">BOOK NERD</h3>
+                <p class="collection-desc">For the TBR pile hoarders and "one more chapter" liars. Your reading obsession, perfectly captured.</p>
+                <a href="book-nerd.html" class="collection-link">SHOP BOOK NERD →</a>
+            </div>
+            
+            <div class="collection-card">
+                <div class="collection-icon">✍️</div>
+                <h3 class="collection-name">WORD NERD</h3>
+                <p class="collection-desc">Grammar police and vocabulary enthusiasts, this one's for you. Correcting the world since birth.</p>
+                <a href="word-nerd.html" class="collection-link">SHOP WORD NERD →</a>
+            </div>
+            
+            <div class="collection-card">
+                <div class="collection-icon">🧠</div>
+                <h3 class="collection-name">BRAIN ROT</h3>
+                <p class="collection-desc">Gen Z approved. SKIBIDI, RIZZ, and Aura Checks for the chronically online generation.</p>
+                <a href="brain-rot.html" class="collection-link">SHOP BRAIN ROT →</a>
+            </div>
+            
+            <div class="collection-card">
+                <div class="collection-icon">🏀</div>
+                <h3 class="collection-name">SPORTS NERD</h3>
+                <p class="collection-desc">Fantasy sports obsessives, betting strategists, and couch coaches. For the fans who take stats way too seriously.</p>
+                <a href="sports-nerd.html" class="collection-link">SHOP SPORTS NERD →</a>
+            </div>
+            
+            <div class="collection-card">
+                <div class="collection-icon">🤖</div>
+                <h3 class="collection-name">AI-ISMS</h3>
+                <p class="collection-desc">Where AI culture meets wearable humor. PolyAImory, tech stack relationships, and collab frustrations. For developers and AI enthusiasts who speak the language.</p>
+                <a href="ai-isms.html" class="collection-link">SHOP AI-ISMS →</a>
+            </div>
+            
+            <div class="collection-card">
+                <div class="collection-icon">🐝</div>
+                <h3 class="collection-name">MINI HIVE</h3>
+                <p class="collection-desc">Kids collection designed by 9-year-old Nylah! Adorable chicks, dancing bears, space friends, and empowering bees. Kid creativity at its finest.</p>
+                <a href="mini-hive.html" class="collection-link">SHOP MINI HIVE →</a>
+            </div>
+            
+            <div class="collection-card">
+                <div class="collection-icon">🐝</div>
+                <h3 class="collection-name">ESSENTIALS</h3>
+                <p class="collection-desc">Logo shirts, brand basics, and foundational pieces. Your entry to the Hive.</p>
+                <a href="essentials.html" class="collection-link">SHOP ESSENTIALS →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Email Signup -->
+    <section class="email-signup">
+        <!-- Begin Constant Contact Inline Form Code -->
+        <div class="ctct-inline-form" data-form-id="58c6e1e8-31a4-4ea2-9f78-54d1969bd685"></div>
+        <!-- End Constant Contact Inline Form Code -->
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-logo">
+            <img src="logo-square.png" alt="Nerd Hive Icon">
+        </div>
+        
+        <div class="social-links">
+            <a href="https://instagram.com/nerdhiveofficial" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://tiktok.com/@nerdhiveofficial" target="_blank" aria-label="TikTok">
+                <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61582089479308" target="_blank" aria-label="Facebook">
+                <i class="fab fa-facebook"></i>
+            </a>
+        </div>
+        
+        <div class="footer-text">
+            © 2025 Nerd Hive™. All rights reserved. | Smart is always in style.
+        </div>
+        <div style="margin-top: 15px;">
+            <a href="privacy.html" style="color: #FFD700; text-decoration: none; margin: 0 15px; font-size: 13px;">Privacy Policy</a>
+            <a href="terms.html" style="color: #FFD700; text-decoration: none; margin: 0 15px; font-size: 13px;">Terms of Service</a>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+    
+    <!-- Constant Contact Script -->
+    <script src="//static.ctctcdn.com/js/signup-form-widget/current/signup-form-widget.min.js" async defer></script>
+</body>
+</html>
