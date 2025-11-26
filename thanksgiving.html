@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thanksgiving Limited Edition 2025 - Turkey math, side dish devotion, and pie truth. Premium nerdy holiday apparel from Nerd Hive.">
+    <title>Thanksgiving Limited Edition | Nerd Hive</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background: #ffffff;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        /* Skip to Main Content Link (Accessibility) */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #FFD700;
+            color: #1a1a1a;
+            padding: 8px 16px;
+            text-decoration: none;
+            font-weight: 700;
+            z-index: 9999;
+            border-radius: 0 0 4px 0;
+        }
+
+        .skip-link:focus {
+            top: 0;
+            outline: 3px solid #FFD700;
+            outline-offset: 2px;
+        }
+
+        /* Focus Indicators for Keyboard Navigation */
+        a:focus,
+        button:focus {
+            outline: 3px solid #FFD700;
+            outline-offset: 2px;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Navigation - COMPACT */
+        nav {
+            background: #1a1a1a;
+            padding: 12px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 32px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-menu-toggle:hover {
+            color: #FFD700;
+        }
+
+        .nav-logo img {
+            height: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #ffffff;
+            text-decoration: none;
+            letter-spacing: 1.5px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #FFD700;
+        }
+
+        .shop-btn {
+            background: #FFD700;
+            color: #1a1a1a !important;
+            padding: 12px 30px;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .shop-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+        }
+
+        /* Hero Section - Thanksgiving Theme */
+        .hero {
+            background: linear-gradient(135deg, #8B4513 0%, #A0522D 50%, #CD853F 100%);
+            color: #ffffff;
+            padding: 25px 50px;
+            text-align: center;
+        }
+
+        .hero-icons {
+            font-size: 36px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            font-weight: 900;
+            color: #FFD700;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .hero-description {
+            font-size: 16px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto 10px;
+            color: #ffffff;
+        }
+
+        .hero-tagline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #FFD700;
+            margin-top: 5px;
+        }
+
+        /* Limited Edition Badge */
+        .limited-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+            color: #ffffff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        /* Products Section */
+        .products-section {
+            max-width: 1400px;
+            margin: 30px auto;
+            padding: 0 50px;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #1a1a1a;
+        }
+
+        /* LAYOUT A: Two-Column Dark/Light Product Card */
+        .product-card {
+            background: #f9f9f9;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .product-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 900;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .product-tagline {
+            font-size: 18px;
+            font-style: italic;
+            color: #666;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .product-description {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #555;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 20px;
+        }
+
+        .product-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .product-images figure {
+            margin: 0;
+            text-align: center;
+        }
+
+        .product-images img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .product-images figcaption {
+            font-size: 14px;
+            color: #666;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        .color-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .color-card {
+            background: #ffffff;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .color-header {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        /* Shared Product Styles */
+        .size-info {
+            font-size: 16px;
+            color: #666;
+            margin: 10px 0;
+        }
+
+        .price {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 900;
+            color: #FFD700;
+            margin: 15px 0;
+            text-shadow: 
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .color-list {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .shop-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #1a1a1a;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 16px;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+            border: 2px solid #FFD700;
+        }
+
+        .shop-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5);
+            background: linear-gradient(135deg, #FFA500 0%, #FFD700 100%);
+        }
+
+        /* Why You'll Love This Section */
+        .why-love-section {
+            background: #FFF8F0;
+            padding: 60px 50px;
+            margin: 60px 0;
+            border-top: 4px solid #8B4513;
+            border-bottom: 4px solid #8B4513;
+        }
+
+        .why-love-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .why-love-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #1a1a1a;
+        }
+
+        .why-love-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        .why-love-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .why-love-item .emoji {
+            font-size: 32px;
+            min-width: 40px;
+        }
+
+        .why-love-item h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 5px;
+        }
+
+        .why-love-item p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* Browse All Section */
+        .browse-section {
+            background: #ffffff;
+            padding: 60px 50px;
+            text-align: center;
+        }
+
+        .browse-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+
+        .browse-section p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .browse-button {
+            display: inline-block;
+            background: #FFD700;
+            color: #1a1a1a;
+            padding: 20px 50px;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 900;
+            border-radius: 8px;
+            transition: all 0.3s;
+            border: 3px solid #000;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+        }
+
+        .browse-button:hover {
+            background: #FFC700;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        .search-tip {
+            background: #fffef7;
+            border-left: 5px solid #FFD700;
+            padding: 25px;
+            margin: 30px auto 0;
+            max-width: 900px;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .search-tip h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .search-tip p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .search-tip strong {
+            color: #1a1a1a;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: #ffffff;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .footer-tagline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #FFD700;
+            margin-bottom: 20px;
+        }
+
+        .footer-text {
+            font-size: 14px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 15px;
+        }
+
+        .footer-links {
+            margin-top: 15px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #FFD700;
+            text-decoration: underline;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+                position: relative;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #1a1a1a;
+                flex-direction: column;
+                padding: 20px;
+                gap: 20px;
+                border-top: 2px solid #FFD700;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            }
+
+            .nav-links.mobile-open {
+                display: flex;
+            }
+
+            .nav-links li {
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 10px;
+            }
+
+            .shop-btn {
+                display: block;
+                text-align: center;
+            }
+
+            .hero {
+                padding: 20px 20px;
+            }
+
+            .hero-icons {
+                font-size: 28px;
+                gap: 10px;
+            }
+
+            .hero h1 {
+                font-size: 24px;
+            }
+
+            .hero-description {
+                font-size: 14px;
+            }
+
+            .products-section {
+                padding: 0 20px;
+                margin: 20px auto;
+            }
+
+            .section-title {
+                font-size: 22px;
+                margin-bottom: 20px;
+            }
+
+            .product-card {
+                padding: 20px;
+            }
+
+            .product-card h3 {
+                font-size: 20px;
+            }
+
+            .product-images {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .color-options {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .why-love-section,
+            .browse-section {
+                padding: 40px 20px;
+            }
+
+            .why-love-section h2,
+            .browse-section h2 {
+                font-size: 28px;
+            }
+
+            .search-tip {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to Main Content (Accessibility) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header with Navigation -->
+    <header>
+        <nav aria-label="Main navigation">
+            <div class="nav-logo">
+                <a href="index.html" aria-label="Nerd Hive Home">
+                    <img src="assets/nerd-hive-logo-horizontal.png" alt="Nerd Hive Logo">
+                </a>
+            </div>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger-icon">☰</span>
+            </button>
+            
+            <ul class="nav-links" id="main-nav">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="nerdisms.html">NERDISMS</a></li>
+                <li><a href="holiday.html">HOLIDAY</a></li>
+                <li><a href="essentials.html">ESSENTIALS</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="https://nerd-hive-official.printify.me/" target="_blank" rel="noopener noreferrer" class="shop-btn">SHOP ALL</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <span class="limited-badge">🦃 LIMITED EDITION 2025 🦃</span>
+        <div class="hero-icons" aria-hidden="true">
+            <span>🦃</span>
+            <span>🍂</span>
+            <span>🥧</span>
+        </div>
+        <h1>THANKSGIVING COLLECTION</h1>
+        <p class="hero-description">Turkey math, side dish devotion, and pie truth. This limited-edition collection celebrates the real heroes of Thanksgiving—and the chaos that comes with them.</p>
+        <p class="hero-tagline">Wear your nerd. Own your chaos.</p>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section" aria-labelledby="products-heading">
+        <h2 class="section-title" id="products-heading">THANKSGIVING DESIGNS</h2>
+
+        <!-- PRODUCT 1: I'M HERE FOR THE SIDES -->
+        <article class="product-card">
+            <h3>🦃 I'm Just Here for the Sides</h3>
+            <p class="product-tagline">"Turkey: Optional. Sides: Essential."</p>
+            <p class="product-description">Let's be honest: the real MVPs of Thanksgiving are mashed potatoes, stuffing, and mac and cheese. This shirt is for the people who strategically load up their plates with carbs and hope nobody notices they're avoiding the turkey. Wear this and own your side-dish obsession with pride.</p>
+            
+            <div class="product-images">
+                <figure>
+                    <img src="im-just-here-front.png" alt="I'm Just Here for the Sides shirt front design showing side dish icons">
+                    <figcaption>Front Design</figcaption>
+                </figure>
+                <figure>
+                    <img src="im-just-here-back.png" alt="I'm Just Here for the Sides shirt back design">
+                    <figcaption>Back Design</figcaption>
+                </figure>
+            </div>
+            
+            <div class="color-options">
+                <div class="color-card">
+                    <div class="color-header">🌑 Dark Colors</div>
+                    <p class="size-info">Sizes S - 5XL</p>
+                    <p class="price">$32.99</p>
+                    <p class="color-list"><strong>Colors:</strong> Black, Charcoal, Navy, Forest Green, Maroon</p>
+                    <a href="https://nerd-hive-official.printify.me/product/24808549/thanksgiving-limited-edition-im-just-here-for-the-sides-tee-dark-original-hive-2025-t-shirt" class="shop-button" target="_blank" rel="noopener noreferrer">SHOP DARK</a>
+                </div>
+                <div class="color-card">
+                    <div class="color-header">☀️ Light Colors</div>
+                    <p class="size-info">Sizes S - 5XL</p>
+                    <p class="price">$32.99</p>
+                    <p class="color-list"><strong>Colors:</strong> White, Athletic Heather, Soft Cream, Natural</p>
+                    <a href="https://nerd-hive-official.printify.me/product/24808551/thanksgiving-limited-edition-i-checked-the-thermometer-47-times-tee-dark-thanksgiving-turkey-cooking-humor-original-hive-2025-limited-edition-t-shirt" class="shop-button" target="_blank" rel="noopener noreferrer">SHOP LIGHT</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- PRODUCT 2: TURKEY NERD / THERMOMETER -->
+        <article class="product-card">
+            <h3>🌡️ I Checked the Thermometer 47 Times</h3>
+            <p class="product-tagline">"The math was perfect... still dry."</p>
+            <p class="product-description">For the cook who followed every rule, checked the temperature obsessively, calculated the timing to perfection—and somehow the turkey still came out like the Sahara Desert. Sometimes the universe just doesn't care about your spreadsheet. At least you can laugh about it while wearing this shirt.</p>
+            
+            <div class="product-images">
+                <figure>
+                    <img src="turkey-nerd.png" alt="I Checked the Thermometer 47 Times shirt front design with turkey and thermometer">
+                    <figcaption>Front Design</figcaption>
+                </figure>
+                <figure>
+                    <img src="turkey-nerd-back.png" alt="I Checked the Thermometer 47 Times shirt back design">
+                    <figcaption>Back Design</figcaption>
+                </figure>
+            </div>
+            
+            <div class="color-options">
+                <div class="color-card">
+                    <div class="color-header">🌑 Dark Colors</div>
+                    <p class="size-info">Sizes S - 5XL</p>
+                    <p class="price">$32.99</p>
+                    <p class="color-list"><strong>Colors:</strong> Black, Charcoal, Navy, Forest Green, Maroon</p>
+                    <a href="https://nerd-hive-official.printify.me/product/24808551/thanksgiving-limited-edition-i-checked-the-thermometer-47-times-tee-dark-thanksgiving-turkey-cooking-humor-original-hive-2025-limited-edition-t-shirt" class="shop-button" target="_blank" rel="noopener noreferrer">SHOP DARK</a>
+                </div>
+                <div class="color-card">
+                    <div class="color-header">☀️ Light Colors</div>
+                    <p class="size-info">Sizes S - 5XL</p>
+                    <p class="price">$32.99</p>
+                    <p class="color-list"><strong>Colors:</strong> White, Athletic Heather, Soft Cream, Natural</p>
+                    <a href="https://nerd-hive-official.printify.me/product/24808552/thanksgiving-limited-edition-i-checked-the-thermometer-47-times-tee-light-original-hive-2025-t-shirt" class="shop-button" target="_blank" rel="noopener noreferrer">SHOP LIGHT</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- PRODUCT 3: THANKFUL FOR PIE EMOJISM -->
+        <article class="product-card">
+            <h3>🥧 Thankful for Pie — Emojism™</h3>
+            <p class="product-tagline">Premium Decode Puzzle: "🙏4️⃣🥧"</p>
+            <p class="product-description">A premium decode puzzle for those who know the real MVP of Thanksgiving dinner. The front features our signature Emojism (🙏4️⃣🥧), and the back reveals the truth: "Thankful for Pie — Because, LBH, that's what it's really about." Double-sided design for people with the right priorities.</p>
+            
+            <div class="product-images">
+                <figure>
+                    <img src="thx-emojism.png" alt="Thankful for Pie Emojism shirt front design with emoji puzzle">
+                    <figcaption>Front Design (Puzzle)</figcaption>
+                </figure>
+                <figure>
+                    <img src="thx-emojism-back.png" alt="Thankful for Pie Emojism shirt back design with decoded message">
+                    <figcaption>Back Design (Reveal)</figcaption>
+                </figure>
+            </div>
+            
+            <div class="color-options">
+                <div class="color-card">
+                    <div class="color-header">🌑 Dark Colors</div>
+                    <p class="size-info">Sizes S - 5XL</p>
+                    <p class="price">$32.99</p>
+                    <p class="color-list"><strong>Colors:</strong> Black, Charcoal, Navy, Forest Green, Maroon</p>
+                    <a href="https://nerd-hive-official.printify.me/product/24808547/thanksgiving-limited-edition-4-emojism-thankful-for-pie-tee-dark-original-hive-2025" class="shop-button" target="_blank" rel="noopener noreferrer">SHOP DARK</a>
+                </div>
+                <div class="color-card">
+                    <div class="color-header">☀️ Light Colors</div>
+                    <p class="size-info">Sizes S - 5XL</p>
+                    <p class="price">$32.99</p>
+                    <p class="color-list"><strong>Colors:</strong> White, Athletic Heather, Soft Cream, Natural</p>
+                    <a href="https://nerd-hive-official.printify.me/product/24808546/thanksgiving-limited-edition-4-emojism-thankful-for-pie-tee-light-original-hive-2025" class="shop-button" target="_blank" rel="noopener noreferrer">SHOP LIGHT</a>
+                </div>
+            </div>
+        </article>
+
+    </section>
+
+    <!-- Why You'll Love This Collection -->
+    <section class="why-love-section" aria-labelledby="why-love-heading">
+        <div class="why-love-content">
+            <h2 id="why-love-heading">Why You'll Love This Collection</h2>
+            <div class="why-love-list">
+                <div class="why-love-item">
+                    <span class="emoji" aria-hidden="true">🦃</span>
+                    <div>
+                        <h4>Limited Edition 2025</h4>
+                        <p>These are founding year designs—collector's items for future Thanksgivings. Once they're gone, they're gone!</p>
+                    </div>
+                </div>
+                <div class="why-love-item">
+                    <span class="emoji" aria-hidden="true">😂</span>
+                    <div>
+                        <h4>Relatable Humor</h4>
+                        <p>Turkey math fails, side dish obsessions, and pie priorities. If you've lived it, you'll laugh at it.</p>
+                    </div>
+                </div>
+                <div class="why-love-item">
+                    <span class="emoji" aria-hidden="true">🎨</span>
+                    <div>
+                        <h4>Double-Sided Designs</h4>
+                        <p>Front AND back artwork means twice the personality. The Emojism™ even has a decode puzzle!</p>
+                    </div>
+                </div>
+                <div class="why-love-item">
+                    <span class="emoji" aria-hidden="true">🎁</span>
+                    <div>
+                        <h4>Perfect Gifts</h4>
+                        <p>Know a cook who obsesses over turkey temps? A side-dish loyalist? These make perfect Thanksgiving gifts.</p>
+                    </div>
+                </div>
+                <div class="why-love-item">
+                    <span class="emoji" aria-hidden="true">👕</span>
+                    <div>
+                        <h4>Premium Quality</h4>
+                        <p>Bella Canvas quality in multiple color options. Soft, comfortable, durable. Sizes S-5XL because nerds come in all sizes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Browse All Designs -->
+    <section class="browse-section" aria-labelledby="browse-heading">
+        <h2 id="browse-heading">Browse All Thanksgiving Designs</h2>
+        <p>Want to see every Thanksgiving design in our store? Click below!</p>
+        <a href="https://nerd-hive-official.printify.me/" target="_blank" rel="noopener noreferrer" class="browse-button">🛒 SHOP ALL THANKSGIVING</a>
+        
+        <div class="search-tip">
+            <h3>💡 Pro Search Tip:</h3>
+            <p>Once in our store, press <strong>Ctrl+F</strong> (PC) or <strong>Cmd+F</strong> (Mac), then type <strong>"Thanksgiving"</strong> in the search box. All designs from this collection will highlight instantly!</p>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <p class="footer-tagline">Wear your nerd. Own your chaos. 🐝</p>
+        <p class="footer-text">© 2025 Nerd Hive™. All rights reserved.</p>
+        <p class="footer-links">
+            <a href="index.html">Home</a> · 
+            <a href="holiday.html">Holiday Collection</a> · 
+            <a href="about.html">About</a>
+        </p>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuToggle.addEventListener('click', function() {
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
+            navLinks.classList.toggle('mobile-open');
+            
+            // Change icon
+            const icon = this.querySelector('.hamburger-icon');
+            icon.textContent = isExpanded ? '☰' : '✕';
+        });
+    </script>
+</body>
+</html>
