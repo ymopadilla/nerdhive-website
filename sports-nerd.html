@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sports Nerd collection for fantasy sports obsessives, couch quarterbacks, sports bettors, and armchair coaches. Spectator humor for fans who take stats way too seriously.">
+    <title>Sports Nerd Collection | Nerd Hive</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background: #ffffff;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        /* Skip to Main Content Link (Accessibility) */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #FFD700;
+            color: #1a1a1a;
+            padding: 8px 16px;
+            text-decoration: none;
+            font-weight: 700;
+            z-index: 9999;
+            border-radius: 0 0 4px 0;
+        }
+
+        .skip-link:focus {
+            top: 0;
+            outline: 3px solid #FFD700;
+            outline-offset: 2px;
+        }
+
+        /* Focus Indicators for Keyboard Navigation */
+        a:focus,
+        button:focus {
+            outline: 3px solid #FFD700;
+            outline-offset: 2px;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Navigation - COMPACT */
+        nav {
+            background: #1a1a1a;
+            padding: 12px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 32px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-menu-toggle:hover {
+            color: #FFD700;
+        }
+
+        .nav-logo img {
+            height: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #ffffff;
+            text-decoration: none;
+            letter-spacing: 1.5px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #FFD700;
+        }
+
+        .shop-btn {
+            background: #FFD700;
+            color: #1a1a1a !important;
+            padding: 12px 30px;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .shop-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+        }
+
+        /* Hero Section - COMPACT */
+        .hero {
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+            color: #ffffff;
+            padding: 25px 50px;
+            text-align: center;
+        }
+
+        .hero-icons {
+            font-size: 36px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            font-weight: 900;
+            color: #FFD700;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .hero-description {
+            font-size: 16px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto 10px;
+            color: #ffffff;
+        }
+
+        .hero-tagline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #FFD700;
+            margin-top: 5px;
+        }
+
+        /* Products Section */
+        .products-section {
+            max-width: 1400px;
+            margin: 30px auto;
+            padding: 0 50px;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #1a1a1a;
+        }
+
+        /* Product Grid - For single-image products */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Product Card - Single Image Version */
+        .product-card {
+            background: #f9f9f9;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        /* NEW Badge */
+        .product-card.new-product {
+            border: 3px solid #FF6B35;
+            position: relative;
+        }
+
+        .new-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: linear-gradient(135deg, #FF6B35 0%, #FF8C42 100%);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            animation: pulse-new 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-new {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .product-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 22px;
+            font-weight: 900;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+
+        .product-card img {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .size-info {
+            font-size: 16px;
+            color: #666;
+            margin: 10px 0;
+        }
+
+        .price {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 900;
+            color: #FFD700;
+            margin: 15px 0;
+            text-shadow: 
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .color-list {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .shop-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #1a1a1a;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 16px;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .shop-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5);
+        }
+
+        /* Why You'll Love This Section */
+        .why-love-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            padding: 60px 50px;
+            color: #ffffff;
+        }
+
+        .why-love-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .why-love-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            font-weight: 900;
+            color: #FFD700;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .why-love-list {
+            display: grid;
+            gap: 25px;
+        }
+
+        .why-love-item {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            background: rgba(255,255,255,0.05);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid #FFD700;
+        }
+
+        .why-love-item .emoji {
+            font-size: 32px;
+            flex-shrink: 0;
+        }
+
+        .why-love-item h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #FFD700;
+            margin-bottom: 8px;
+        }
+
+        .why-love-item p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #cccccc;
+        }
+
+        /* Browse All Section */
+        .browse-section {
+            padding: 60px 50px;
+            text-align: center;
+            background: #f5f5f5;
+        }
+
+        .browse-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            font-weight: 900;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+        }
+
+        .browse-section p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .browse-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+            color: #FFD700;
+            padding: 18px 50px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 18px;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+        }
+
+        .browse-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .search-tip {
+            margin-top: 40px;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .search-tip h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+
+        .search-tip p {
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 0;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: #ffffff;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .footer-tagline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #FFD700;
+            margin-bottom: 10px;
+        }
+
+        .footer-text {
+            font-size: 14px;
+            color: #888;
+        }
+
+        .footer-links {
+            margin-top: 15px;
+        }
+
+        .footer-links a {
+            color: #FFD700;
+            text-decoration: none;
+            font-size: 14px;
+            margin: 0 15px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 900px) {
+            nav {
+                padding: 12px 20px;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #1a1a1a;
+                flex-direction: column;
+                padding: 20px;
+                gap: 20px;
+                border-top: 2px solid #FFD700;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            }
+
+            .nav-links.mobile-open {
+                display: flex;
+            }
+
+            .nav-links li {
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 10px;
+            }
+
+            .shop-btn {
+                display: block;
+                text-align: center;
+            }
+
+            .hero {
+                padding: 20px 20px;
+            }
+
+            .hero-icons {
+                font-size: 28px;
+                gap: 10px;
+            }
+
+            .hero h1 {
+                font-size: 24px;
+            }
+
+            .hero-description {
+                font-size: 14px;
+            }
+
+            .products-section {
+                padding: 0 20px;
+                margin: 20px auto;
+            }
+
+            .section-title {
+                font-size: 22px;
+                margin-bottom: 20px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-card {
+                padding: 20px;
+            }
+
+            .product-card h3 {
+                font-size: 18px;
+            }
+
+            .why-love-section,
+            .browse-section {
+                padding: 40px 20px;
+            }
+
+            .why-love-section h2,
+            .browse-section h2 {
+                font-size: 28px;
+            }
+
+            .search-tip {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to Main Content (Accessibility) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header with Navigation -->
+    <header>
+        <nav aria-label="Main navigation">
+            <div class="nav-logo">
+                <a href="index.html" aria-label="Nerd Hive Home">
+                    <img src="assets/nerd-hive-logo-horizontal.png" alt="Nerd Hive Logo">
+                </a>
+            </div>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger-icon">☰</span>
+            </button>
+            
+            <ul class="nav-links" id="main-nav">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="nerdisms.html">NERDISMS</a></li>
+                <li><a href="holiday.html">HOLIDAY</a></li>
+                <li><a href="essentials.html">ESSENTIALS</a></li>
+                <li><a href="mini-hive.html">MINI HIVE</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="https://nerd-hive-official.printify.me/" target="_blank" rel="noopener noreferrer" class="shop-btn">SHOP ALL</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-icons">
+            <span>🏈</span>
+            <span>🏀</span>
+            <span>🎰</span>
+        </div>
+        <h1>SPORTS NERD COLLECTION</h1>
+        <p class="hero-description">For the couch coaches, armchair quarterbacks, fantasy football obsessives, and sports bettors who've "definitely" broken even. If you yell at TVs, build parlays at 2am, or give unsolicited analysis during game day—these shirts are for you.</p>
+        <p class="hero-tagline">Wear Your Nerd. Own It.</p>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <h2 class="section-title">SPORTS NERD DESIGNS</h2>
+
+        <div class="products-grid">
+
+            <!-- Product 1: Fantasy GM - NEW -->
+            <article class="product-card new-product">
+                <span class="new-badge">NEW!</span>
+                <h3>Fantasy GM</h3>
+                <figure>
+                    <img src="assets/sports-nerd/sn-fantasy-gm.png" alt="Sports Nerdisms shirt: Fantasy GM - I've Never Touched a Football But I'll Tell You Why Your Trade is Trash - funny fantasy football tee">
+                </figure>
+                <p class="size-info">Sizes S - 5XL</p>
+                <p class="price">Starting at $24.99</p>
+                <p class="color-list"><strong>Colors:</strong> Asphalt, Black, Charcoal, Antique Cherry Red, Royal, Navy, Purple</p>
+                <a href="https://nerd-hive-official.printify.me/product/25173283/sports-nerdisms-fantasy-gm-shirt-funny-fantasy-football-tee-trade-is-trash-league-commissioner-gift-football-season-humor-nerd-hive" class="shop-button" target="_blank" rel="noopener noreferrer">SHOP NOW</a>
+            </article>
+
+            <!-- Product 2: Professional Parlay Architect - NEW -->
+            <article class="product-card new-product">
+                <span class="new-badge">NEW!</span>
+                <h3>Professional Parlay Architect</h3>
+                <figure>
+                    <img src="assets/sports-nerd/sn-prof-parlay.png" alt="Sports Nerdisms shirt: Professional Parlay Architect - Fancy Title For I Lose Money Creatively - funny sports betting tee">
+                </figure>
+                <p class="size-info">Sizes S - 5XL</p>
+                <p class="price">Starting at $24.99</p>
+                <p class="color-list"><strong>Colors:</strong> Asphalt, Black, Charcoal, Antique Cherry Red, Royal, Navy, Purple</p>
+                <a href="https://nerd-hive-official.printify.me/product/25173802/sports-nerdisms-professional-parlay-architect-shirt-funny-sports-betting-tee-i-lose-money-creatively-fanduel-draftkings-humor-gambling-gift-nerd-hive" class="shop-button" target="_blank" rel="noopener noreferrer">SHOP NOW</a>
+            </article>
+
+            <!-- Product 3: Couch Quarterback -->
+            <article class="product-card">
+                <h3>Professional Couch Quarterback</h3>
+                <figure>
+                    <img src="assets/sports-nerd/sn-pro-couch-quarterback.png" alt="Sports Nerd shirt design: Professional Couch Quarterback funny sports fan couch coach tee">
+                </figure>
+                <p class="size-info">Sizes S - 4XL</p>
+                <p class="price">Starting at $24.99</p>
+                <p class="color-list"><strong>Colors:</strong> Asphalt, Black, Vintage Black, Military Green, Navy, Canvas Red</p>
+                <a href="https://nerd-hive-official.printify.me/product/25016930/sports-nerd-couch-quarterback-shirt-funny-sports-fan-couch-coach-gift-for-football-lovers" class="shop-button" target="_blank" rel="noopener noreferrer">SHOP NOW</a>
+            </article>
+
+            <!-- Product 4: Armchair Quarterback -->
+            <article class="product-card">
+                <h3>Armchair Quarterback</h3>
+                <figure>
+                    <img src="assets/sports-nerd/sn-armchair-quarterback.png" alt="Sports Nerd shirt design: Armchair Quarterback funny football fan recliner coach tee">
+                </figure>
+                <p class="size-info">Sizes S - 4XL</p>
+                <p class="price">Starting at $24.99</p>
+                <p class="color-list"><strong>Colors:</strong> Asphalt, Black, Vintage Black, Military Green, Navy, Canvas Red</p>
+                <a href="https://nerd-hive-official.printify.me/product/25017116/sports-nerd-armchair-quarterback-shirt-funny-football-fan-recliner-coach-gift" class="shop-button" target="_blank" rel="noopener noreferrer">SHOP NOW</a>
+            </article>
+
+        </div>
+
+    </section>
+
+    <!-- Why You'll Love This Collection -->
+    <section class="why-love-section">
+        <div class="why-love-content">
+            <h2>Why You'll Love This Collection</h2>
+            <div class="why-love-list">
+                <div class="why-love-item">
+                    <span class="emoji">🏈</span>
+                    <div>
+                        <h4>Spectator-Focused Humor</h4>
+                        <p>Not generic athlete motivation—REAL fan humor. For those of us who coach from the couch and could definitely do better than the actual coaches (we couldn't, but still).</p>
+                    </div>
+                </div>
+                <div class="why-love-item">
+                    <span class="emoji">📊</span>
+                    <div>
+                        <h4>Fantasy & Stats Obsessed</h4>
+                        <p>For the nerds who analyze every trade, track fantasy points obsessively, and have strong opinions about other people's lineups. Zero touchdowns thrown. Maximum GM energy.</p>
+                    </div>
+                </div>
+                <div class="why-love-item">
+                    <span class="emoji">🎰</span>
+                    <div>
+                        <h4>Sports Betting Realness</h4>
+                        <p>Built 12-leg parlays at 3am? Convinced yourself THIS one is different? We see you, Professional Parlay Architect. Losing money creatively is an art form.</p>
+                    </div>
+                </div>
+                <div class="why-love-item">
+                    <span class="emoji">🛋️</span>
+                    <div>
+                        <h4>Couch Coach Pride</h4>
+                        <p>Professional-grade couch quarterbacking requires proper uniform. Now you can make it official with shirts that declare your expertise from the comfort of your recliner.</p>
+                    </div>
+                </div>
+                <div class="why-love-item">
+                    <span class="emoji">👕</span>
+                    <div>
+                        <h4>Game Day Ready</h4>
+                        <p>Premium Bella Canvas quality in multiple color options. Comfortable enough for 12-hour game marathons. Sizes S-5XL because fans come in all sizes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Browse All Designs -->
+    <section class="browse-section">
+        <h2>Browse All Sports Nerd Designs</h2>
+        <p>Want to see every Sports Nerd design in our store? Click below!</p>
+        <a href="https://nerd-hive-official.printify.me/" target="_blank" rel="noopener noreferrer" class="browse-button">🛒 SHOP ALL SPORTS NERD</a>
+        
+        <div class="search-tip">
+            <h3>💡 Pro Search Tip:</h3>
+            <p>Once in our store, press <strong>Ctrl+F</strong> (PC) or <strong>Cmd+F</strong> (Mac), then type <strong>"Sports Nerd"</strong> in the search box. All designs from this collection will highlight instantly!</p>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <p class="footer-tagline">Wear Your Nerd. Own It. 🐝</p>
+        <p class="footer-text">© 2025 Nerd Hive™. All rights reserved.</p>
+        <p class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+        </p>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuToggle.addEventListener('click', function() {
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
+            navLinks.classList.toggle('mobile-open');
+            
+            // Change icon
+            const icon = this.querySelector('.hamburger-icon');
+            icon.textContent = isExpanded ? '☰' : '✕';
+        });
+    </script>
+</body>
+</html>
