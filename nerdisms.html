@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nerdisms Collection - Text-based humor capturing AI quirks, gaming trash talk, book hoarding, and everything that makes nerd culture hilariously relatable.">
+    <title>Nerdisms Collection | Nerd Hive</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #ffffff;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        /* Skip to Main Content Link (Accessibility) */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #FFD700;
+            color: #1a1a1a;
+            padding: 8px 16px;
+            text-decoration: none;
+            font-weight: 700;
+            z-index: 9999;
+            border-radius: 0 0 4px 0;
+        }
+
+        .skip-link:focus {
+            top: 0;
+            outline: 3px solid #FFD700;
+            outline-offset: 2px;
+        }
+
+        /* Focus Indicators for Keyboard Navigation */
+        a:focus,
+        button:focus {
+            outline: 3px solid #FFD700;
+            outline-offset: 2px;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Navigation - COMPACT */
+        nav {
+            background: #1a1a1a;
+            padding: 12px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 32px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-menu-toggle:hover {
+            color: #FFD700;
+        }
+
+        .nav-logo img {
+            height: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #ffffff;
+            text-decoration: none;
+            letter-spacing: 1.5px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #FFD700;
+        }
+
+        .shop-btn {
+            background: #FFD700;
+            color: #1a1a1a !important;
+            padding: 12px 30px;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .shop-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+        }
+
+        /* Hero Section - COMPACT */
+        .hero {
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+            color: #ffffff;
+            padding: 30px 50px;
+            text-align: center;
+        }
+
+        .hero-icons {
+            font-size: 36px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            font-weight: 900;
+            color: #FFD700;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .hero-description {
+            font-size: 16px;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto 10px;
+            color: #ffffff;
+        }
+
+        .hero-tagline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #FFD700;
+            margin-top: 10px;
+        }
+
+        /* Collections Grid */
+        .collections-section {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 40px;
+            color: #1a1a1a;
+        }
+
+        .collections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .collection-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 30px 25px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid #f0f0f0;
+        }
+
+        .collection-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border-color: #FFD700;
+        }
+
+        .collection-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .collection-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 900;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+
+        .collection-desc {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            min-height: 50px;
+        }
+
+        .collection-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #1a1a1a;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
+            border: 2px solid #FFD700;
+        }
+
+        .collection-link:hover {
+            background: linear-gradient(135deg, #FFA500 0%, #FFD700 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(255, 215, 0, 0.4);
+        }
+
+        .coming-soon {
+            background: #e0e0e0;
+            color: #666;
+            cursor: not-allowed;
+            border: 2px solid #ccc;
+            box-shadow: none;
+        }
+
+        .coming-soon:hover {
+            background: #e0e0e0;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .badge-live {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .badge-coming-soon {
+            background: #FF9800;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: #ffffff;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .footer-tagline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #FFD700;
+            margin-bottom: 20px;
+        }
+
+        .footer-text {
+            font-size: 14px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 15px;
+        }
+
+        .social-links {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .social-links a {
+            color: #FFD700;
+            font-size: 28px;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            color: #ffffff;
+            transform: scale(1.1);
+        }
+
+        .footer-links {
+            margin-top: 15px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.3s;
+            margin: 0 15px;
+        }
+
+        .footer-links a:hover {
+            color: #FFD700;
+            text-decoration: underline;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+                position: relative;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #1a1a1a;
+                flex-direction: column;
+                padding: 20px;
+                gap: 20px;
+                border-top: 2px solid #FFD700;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            }
+
+            .nav-links.mobile-open {
+                display: flex;
+            }
+
+            .nav-links li {
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 10px;
+            }
+
+            .shop-btn {
+                display: block;
+                text-align: center;
+            }
+
+            .hero {
+                padding: 25px 20px;
+            }
+
+            .hero h1 {
+                font-size: 26px;
+            }
+
+            .hero-description {
+                font-size: 14px;
+            }
+
+            .collections-section {
+                margin: 30px auto;
+            }
+
+            .section-title {
+                font-size: 22px;
+            }
+
+            .collections-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to Main Content (Accessibility) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header with Navigation -->
+    <header>
+        <nav aria-label="Main navigation">
+            <div class="nav-logo">
+                <a href="index.html" aria-label="Nerd Hive Home">
+                    <img src="assets/nerd-hive-logo-horizontal.png" alt="Nerd Hive Logo">
+                </a>
+            </div>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger-icon">☰</span>
+            </button>
+            
+            <ul class="nav-links" id="main-nav">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="nerdisms.html">NERDISMS</a></li>
+                <li><a href="essentials.html">ESSENTIALS</a></li>
+                <li><a href="mini-hive.html">MINI HIVE</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="https://nerd-hive-official.printify.me/" target="_blank" rel="noopener noreferrer" class="shop-btn">SHOP ALL</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-icons">
+            <span>💬</span>
+            <span>🐝</span>
+            <span>💬</span>
+        </div>
+        <h1>NERDISMS COLLECTION</h1>
+        <p class="hero-description">Where nerd life gets real. Text-based humor capturing AI quirks, gaming trash talk, book hoarding, and everything that makes nerd culture hilariously relatable. Bold statements. Zero apologies. Maximum recognition.</p>
+        <p class="hero-tagline">Wear Your Nerd. Own Your Quirks.</p>
+    </section>
+
+    <!-- Collections Grid -->
+    <section class="collections-section">
+        <h2 class="section-title">EXPLORE NERDISMS BY TYPE</h2>
+        
+        <div class="collections-grid">
+            <!-- LIVE COLLECTIONS -->
+            
+            <div class="collection-card">
+                <span class="status-badge badge-live">● LIVE NOW</span>
+                <div class="collection-icon">🎮</div>
+                <h3 class="collection-name">GAMING NERD</h3>
+                <p class="collection-desc">Rage quits, trash talk, and "one more game" lies. For gamers who know there's no pause in multiplayer.</p>
+                <a href="gaming-nerd.html" class="collection-link">SHOP GAMING NERD →</a>
+            </div>
+            
+            <div class="collection-card">
+                <span class="status-badge badge-live">● LIVE NOW</span>
+                <div class="collection-icon">📚</div>
+                <h3 class="collection-name">BOOK NERD</h3>
+                <p class="collection-desc">For the TBR pile hoarders and "one more chapter" liars. Your reading obsession, perfectly captured.</p>
+                <a href="book-nerd.html" class="collection-link">SHOP BOOK NERD →</a>
+            </div>
+
+            <div class="collection-card">
+                <span class="status-badge badge-live">● LIVE NOW</span>
+                <div class="collection-icon">✏️</div>
+                <h3 class="collection-name">WORD NERD</h3>
+                <p class="collection-desc">Grammar police and vocabulary enthusiasts. Correcting the world since birth.</p>
+                <a href="word-nerd.html" class="collection-link">SHOP WORD NERD →</a>
+            </div>
+
+            <div class="collection-card">
+                <span class="status-badge badge-live">● LIVE NOW</span>
+                <div class="collection-icon">🧠</div>
+                <h3 class="collection-name">BRAIN ROT</h3>
+                <p class="collection-desc">Gen Z approved. SKIBIDI, RIZZ, and Aura Checks for the chronically online generation.</p>
+                <a href="brain-rot.html" class="collection-link">SHOP BRAIN ROT →</a>
+            </div>
+
+            <div class="collection-card">
+                <span class="status-badge badge-live">● LIVE NOW</span>
+                <div class="collection-icon">🏈</div>
+                <h3 class="collection-name">SPORTS NERD</h3>
+                <p class="collection-desc">Couch quarterbacks and armchair coaches. For fans who yell at TVs like players can hear them.</p>
+                <a href="sports-nerd.html" class="collection-link">SHOP SPORTS NERD →</a>
+            </div>
+
+            <div class="collection-card">
+                <span class="status-badge badge-live">● LIVE NOW</span>
+                <div class="collection-icon">🤖</div>
+                <h3 class="collection-name">AI-ISMS</h3>
+                <p class="collection-desc">Claude worship, ChatGPT frustrations, and PolyAImory. For those of us living in the AI age.</p>
+                <a href="ai-isms.html" class="collection-link">SHOP AI-ISMS →</a>
+            </div>
+
+            <!-- COMING SOON COLLECTIONS -->
+
+            <div class="collection-card">
+                <span class="status-badge badge-coming-soon">● COMING SOON</span>
+                <div class="collection-icon">💡</div>
+                <h3 class="collection-name">IDEA NERDS</h3>
+                <p class="collection-desc">2am brainstorms, hyperfocus sessions, and brains that won't stop generating. Creative chaos.</p>
+                <a href="#" class="collection-link coming-soon">COMING SOON</a>
+            </div>
+
+            <div class="collection-card">
+                <span class="status-badge badge-coming-soon">● COMING SOON</span>
+                <div class="collection-icon">🍄</div>
+                <h3 class="collection-name">WELLNESS NERDS</h3>
+                <p class="collection-desc">Mushrooms made me do it. Box breathing fails. Food is too good. Wellness with hilarious reality.</p>
+                <a href="#" class="collection-link coming-soon">COMING SOON</a>
+            </div>
+
+            <div class="collection-card">
+                <span class="status-badge badge-coming-soon">● COMING SOON</span>
+                <div class="collection-icon">💻</div>
+                <h3 class="collection-name">TECH / CODE-ISMS</h3>
+                <p class="collection-desc">IT support trauma, debugging nightmares, and "have you tried turning it off and on again?"</p>
+                <a href="#" class="collection-link coming-soon">COMING SOON</a>
+            </div>
+
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <p class="footer-tagline">Wear Your Nerd. Own Your Quirks. 🐝</p>
+        <div class="social-links">
+            <a href="https://instagram.com/nerdhiveofficial" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">📷</a>
+            <a href="https://tiktok.com/@nerdhiveofficial" target="_blank" rel="noopener noreferrer" aria-label="Follow us on TikTok">🎵</a>
+            <a href="https://www.facebook.com/profile.php?id=61582089479308" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook">📘</a>
+        </div>
+        <p class="footer-text">© 2025 Nerd Hive™. All rights reserved.</p>
+        <p class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="accessibility.html">Accessibility</a>
+        </p>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuToggle.addEventListener('click', function() {
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
+            navLinks.classList.toggle('mobile-open');
+            
+            // Change icon
+            const icon = this.querySelector('.hamburger-icon');
+            icon.textContent = isExpanded ? '☰' : '✕';
+        });
+    </script>
+</body>
+</html>
