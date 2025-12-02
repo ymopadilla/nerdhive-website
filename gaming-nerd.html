@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gaming Nerdism collection - Rage quits, trash talk, and 'one more game' lies. Gaming culture made wearable.">
+    <title>Gaming Nerdism Collection | Nerd Hive</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background: #ffffff;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        /* Skip to Main Content Link (Accessibility) */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #FFD700;
+            color: #1a1a1a;
+            padding: 8px 16px;
+            text-decoration: none;
+            font-weight: 700;
+            z-index: 9999;
+            border-radius: 0 0 4px 0;
+        }
+
+        .skip-link:focus {
+            top: 0;
+            outline: 3px solid #FFD700;
+            outline-offset: 2px;
+        }
+
+        /* Focus Indicators for Keyboard Navigation */
+        a:focus,
+        button:focus {
+            outline: 3px solid #FFD700;
+            outline-offset: 2px;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Navigation - COMPACT */
+        nav {
+            background: #1a1a1a;
+            padding: 12px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 32px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-menu-toggle:hover {
+            color: #FFD700;
+        }
+
+        .nav-logo img {
+            height: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #ffffff;
+            text-decoration: none;
+            letter-spacing: 1.5px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #FFD700;
+        }
+
+        .shop-btn {
+            background: #FFD700;
+            color: #1a1a1a !important;
+            padding: 12px 30px;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .shop-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+        }
+
+        /* Hero Section - COMPACT */
+        .hero {
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+            color: #ffffff;
+            padding: 25px 50px;
+            text-align: center;
+        }
+
+        .hero-icons {
+            font-size: 36px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            font-weight: 900;
+            color: #FFD700;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .hero-description {
+            font-size: 16px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto 10px;
+            color: #ffffff;
+        }
+
+        .hero-tagline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #FFD700;
+            margin-top: 5px;
+        }
+
+        /* Products Section */
+        .products-section {
+            max-width: 1400px;
+            margin: 30px auto;
+            padding: 0 50px;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #1a1a1a;
+        }
+
+        /* Product Card */
+        .product-card {
+            background: #f9f9f9;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .product-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 900;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .product-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .product-images img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .color-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .color-card {
+            background: #ffffff;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .color-header {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        /* Shared Product Styles */
+        .size-info {
+            font-size: 16px;
+            color: #666;
+            margin: 10px 0;
+        }
+
+        .price {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 900;
+            color: #FFD700;
+            margin: 15px 0;
+            text-shadow: 
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .color-list {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .shop-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #1a1a1a;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 16px;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+            border: 2px solid #FFD700;
+        }
+
+        .shop-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5);
+            background: linear-gradient(135deg, #FFA500 0%, #FFD700 100%);
+        }
+
+        /* Why You'll Love This Section */
+        .why-love-section {
+            background: #f5f5f5;
+            padding: 60px 50px;
+            margin: 60px 0;
+        }
+
+        .why-love-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .why-love-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #1a1a1a;
+        }
+
+        .why-love-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        .why-love-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .why-love-item .emoji {
+            font-size: 32px;
+            min-width: 40px;
+        }
+
+        .why-love-item h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 5px;
+        }
+
+        .why-love-item p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* Browse All Section */
+        .browse-section {
+            background: #ffffff;
+            padding: 60px 50px;
+            text-align: center;
+        }
+
+        .browse-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+
+        .browse-section p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .browse-button {
+            display: inline-block;
+            background: #FFD700;
+            color: #1a1a1a;
+            padding: 20px 50px;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 900;
+            border-radius: 8px;
+            transition: all 0.3s;
+            border: 3px solid #000;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+        }
+
+        .browse-button:hover {
+            background: #FFC700;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        .search-tip {
+            background: #fffef7;
+            border-left: 5px solid #FFD700;
+            padding: 25px;
+            margin: 30px auto 0;
+            max-width: 900px;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .search-tip h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .search-tip p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .search-tip strong {
+            color: #1a1a1a;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: #ffffff;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .footer-tagline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #FFD700;
+            margin-bottom: 20px;
+        }
+
+        .footer-text {
+            font-size: 14px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 15px;
+        }
+
+        .footer-links {
+            margin-top: 15px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.3s;
+            margin: 0 15px;
+        }
+
+        .footer-links a:hover {
+            color: #FFD700;
+            text-decoration: underline;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+                position: relative;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #1a1a1a;
+                flex-direction: column;
+                padding: 20px;
+                gap: 20px;
+                border-top: 2px solid #FFD700;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            }
+
+            .nav-links.mobile-open {
+                display: flex;
+            }
+
+            .nav-links li {
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 10px;
+            }
+
+            .shop-btn {
+                display: block;
+                text-align: center;
+            }
+
+            .hero {
+                padding: 20px 20px;
+            }
+
+            .hero-icons {
+                font-size: 28px;
+                gap: 10px;
+            }
+
+            .hero h1 {
+                font-size: 24px;
+            }
+
+            .hero-description {
+                font-size: 14px;
+            }
+
+            .products-section {
+                padding: 0 20px;
+                margin: 20px auto;
+            }
+
+            .section-title {
+                font-size: 22px;
+                margin-bottom: 20px;
+            }
+
+            .product-card {
+                padding: 20px;
+            }
+
+            .product-card h3 {
+                font-size: 18px;
+            }
+
+            .product-images {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .color-options {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .why-love-section,
+            .browse-section {
+                padding: 40px 20px;
+            }
+
+            .why-love-section h2,
+            .browse-section h2 {
+                font-size: 28px;
+            }
+
+            .search-tip {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to Main Content (Accessibility) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header with Navigation -->
+    <header>
+        <nav aria-label="Main navigation">
+            <div class="nav-logo">
+                <a href="index.html" aria-label="Nerd Hive Home">
+                    <img src="assets/nerd-hive-logo-horizontal.png" alt="Nerd Hive Logo">
+                </a>
+            </div>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger-icon">☰</span>
+            </button>
+            
+            <ul class="nav-links" id="main-nav">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="nerdisms.html">NERDISMS</a></li>
+                <li><a href="essentials.html">ESSENTIALS</a></li>
+                <li><a href="mini-hive.html">MINI HIVE</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="https://nerd-hive-official.printify.me/" target="_blank" rel="noopener noreferrer" class="shop-btn">SHOP ALL</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-icons">
+            <span>🎮</span>
+            <span>💀</span>
+            <span>🕹️</span>
+        </div>
+        <h1>GAMING NERDISM COLLECTION</h1>
+        <p class="hero-description">Rage quits, trash talk, and "one more game" lies at 3am. For the gamers who know there's no pause button in online multiplayer, and who've screamed internally when someone asks anyway.</p>
+        <p class="hero-tagline">Wear Your Nerd. Own Your Quirks.</p>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <h2 class="section-title">GAMING NERDISM DESIGNS</h2>
+
+        <!-- Product 1: Git Gud -->
+        <div class="product-card">
+            <h3>Git Gud</h3>
+            <div class="product-images">
+                <img src="assets/gaming/gn-git-gud-white-text.png" alt="Git Gud gaming shirt dark colors mockup">
+                <img src="assets/gaming/gn-git-gud-black-text.png" alt="Git Gud gaming shirt light colors mockup">
+            </div>
+            <div class="color-options">
+                <div class="color-card">
+                    <div class="color-header">🌑 White Text</div>
+                    <p class="size-info">Sizes S - 5XL</p>
+                    <p class="price">$24.99</p>
+                    <p class="color-list"><strong>Colors:</strong> Asphalt, Black, Canvas Red, Burnt Orange, Sage, Evergreen, Deep Teal, Columbia Blue, True Royal, Navy, Team Purple, Orchid</p>
+                    <a href="https://nerd-hive-official.printify.me/product/25203036/gaming-nerdism-git-gud-funny-gamer-t-shirt-video-game-humor-tee" class="shop-button" target="_blank" rel="noopener noreferrer">SHOP WHITE TEXT</a>
+                </div>
+                <div class="color-card">
+                    <div class="color-header">☀️ Black Text</div>
+                    <p class="size-info">Sizes S - 5XL</p>
+                    <p class="price">$24.99</p>
+                    <p class="color-list"><strong>Colors:</strong> White, Solid Athletic Gray, Red, Tan, Natural, Maize Yellow, Teal, Steel Blue, Lilac, Pink, Peach</p>
+                    <a href="https://nerd-hive-official.printify.me/product/25203818/gaming-nerdism-git-gud-funny-gamer-t-shirt-video-game-humor-tee" class="shop-button" target="_blank" rel="noopener noreferrer">SHOP BLACK TEXT</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 2: Just Pause the Game -->
+        <div class="product-card">
+            <h3>Just Pause the Game</h3>
+            <div class="product-images">
+                <img src="assets/gaming/gn-just-pause-white-text.png" alt="Just Pause the Game gaming shirt dark colors mockup">
+                <img src="assets/gaming/gn-just-pause-black-text.png" alt="Just Pause the Game gaming shirt light colors mockup">
+            </div>
+            <div class="color-options">
+                <div class="color-card">
+                    <div class="color-header">🌑 White Text</div>
+                    <p class="size-info">Sizes S - 5XL</p>
+                    <p class="price">$24.99</p>
+                    <p class="color-list"><strong>Colors:</strong> Asphalt, Black, Canvas Red, Burnt Orange, Sage, Evergreen, Deep Teal, Columbia Blue, True Royal, Navy, Team Purple, Orchid</p>
+                    <a href="https://nerd-hive-official.printify.me/product/25203415/gaming-nerdism-just-pause-the-game-funny-gamer-t-shirt-online-multiplayer-humor-tee" class="shop-button" target="_blank" rel="noopener noreferrer">SHOP WHITE TEXT</a>
+                </div>
+                <div class="color-card">
+                    <div class="color-header">☀️ Black Text</div>
+                    <p class="size-info">Sizes S - 5XL</p>
+                    <p class="price">$24.99</p>
+                    <p class="color-list"><strong>Colors:</strong> White, Solid Athletic Gray, Red, Tan, Natural, Maize Yellow, Teal, Steel Blue, Lilac, Pink, Peach</p>
+                    <a href="https://nerd-hive-official.printify.me/product/25203692/gaming-nerdism-just-pause-the-game-funny-gamer-t-shirt-online-multiplayer-humor-tee-light" class="shop-button" target="_blank" rel="noopener noreferrer">SHOP BLACK TEXT</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 3: One More Game -->
+        <div class="product-card">
+            <h3>One More Game</h3>
+            <div class="product-images">
+                <img src="assets/gaming/gn-one-more-game-white-text.png" alt="One More Game gaming shirt dark colors mockup">
+                <img src="assets/gaming/gn-one-more-game-black-text.png" alt="One More Game gaming shirt light colors mockup">
+            </div>
+            <div class="color-options">
+                <div class="color-card">
+                    <div class="color-header">🌑 White Text</div>
+                    <p class="size-info">Sizes S - 5XL</p>
+                    <p class="price">$24.99</p>
+                    <p class="color-list"><strong>Colors:</strong> Asphalt, Black, Canvas Red, Burnt Orange, Sage, Evergreen, Deep Teal, Columbia Blue, True Royal, Navy, Team Purple, Orchid</p>
+                    <a href="https://nerd-hive-official.printify.me/product/25204134/gaming-nerdism-one-more-game-funny-gamer-t-shirt-no-regrets-gaming-tee-white-text" class="shop-button" target="_blank" rel="noopener noreferrer">SHOP WHITE TEXT</a>
+                </div>
+                <div class="color-card">
+                    <div class="color-header">☀️ Black Text</div>
+                    <p class="size-info">Sizes S - 5XL</p>
+                    <p class="price">$24.99</p>
+                    <p class="color-list"><strong>Colors:</strong> White, Solid Athletic Gray, Red, Tan, Natural, Maize Yellow, Teal, Steel Blue, Lilac, Pink, Peach</p>
+                    <a href="https://nerd-hive-official.printify.me/product/25204078/gaming-nerdism-one-more-game-funny-gamer-t-shirt-no-regrets-gaming-tee-black-text" class="shop-button" target="_blank" rel="noopener noreferrer">SHOP BLACK TEXT</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Why You'll Love This Collection -->
+    <section class="why-love-section">
+        <div class="why-love-content">
+            <h2>Why You'll Love This Collection</h2>
+            <div class="why-love-list">
+                <div class="why-love-item">
+                    <span class="emoji">🎮</span>
+                    <div>
+                        <h4>Gamers Get It</h4>
+                        <p>These aren't generic "I heart gaming" shirts. These are inside jokes that make real gamers laugh out loud and nod in painful recognition.</p>
+                    </div>
+                </div>
+                <div class="why-love-item">
+                    <span class="emoji">💀</span>
+                    <div>
+                        <h4>Universal Gaming Truths</h4>
+                        <p>From "git gud" culture to the eternal lie of "one more game" - these designs capture the experiences every gamer shares.</p>
+                    </div>
+                </div>
+                <div class="why-love-item">
+                    <span class="emoji">🕹️</span>
+                    <div>
+                        <h4>Retro Pixel Aesthetic</h4>
+                        <p>Clean typography with that classic gaming font vibe. Bold, readable, and instantly recognizable to your fellow gamers.</p>
+                    </div>
+                </div>
+                <div class="why-love-item">
+                    <span class="emoji">🎁</span>
+                    <div>
+                        <h4>Perfect Gamer Gifts</h4>
+                        <p>Know someone who games until 4am? Who rages at lag? Who insists "there is no pause"? These shirts were made for them.</p>
+                    </div>
+                </div>
+                <div class="why-love-item">
+                    <span class="emoji">👕</span>
+                    <div>
+                        <h4>Premium Quality</h4>
+                        <p>Bella Canvas quality in multiple color options. Soft, comfortable, durable. Sizes S-5XL because gamers come in all sizes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Browse All Designs -->
+    <section class="browse-section">
+        <h2>Browse All Gaming Nerdism Designs</h2>
+        <p>Want to see every Gaming Nerdism design in our store? Click below!</p>
+        <a href="https://nerd-hive-official.printify.me/" target="_blank" rel="noopener noreferrer" class="browse-button">🛒 SHOP ALL GAMING</a>
+        
+        <div class="search-tip">
+            <h3>💡 Pro Search Tip:</h3>
+            <p>Once in our store, press <strong>Ctrl+F</strong> (PC) or <strong>Cmd+F</strong> (Mac), then type <strong>"Gaming Nerdism"</strong> in the search box. All designs from this collection will highlight instantly!</p>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <p class="footer-tagline">Wear Your Nerd. Own Your Quirks. 🐝</p>
+        <p class="footer-text">© 2025 Nerd Hive™. All rights reserved.</p>
+        <p class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="accessibility.html">Accessibility</a>
+        </p>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuToggle.addEventListener('click', function() {
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
+            navLinks.classList.toggle('mobile-open');
+            
+            // Change icon
+            const icon = this.querySelector('.hamburger-icon');
+            icon.textContent = isExpanded ? '☰' : '✕';
+        });
+    </script>
+</body>
+</html>
