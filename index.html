@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nerd Hive | Celebrating Every Type of Nerd</title>
+    <meta name="description" content="Premium apparel celebrating every type of nerd. From gaming to STEM, AI quirks to wellness warriors - shirts that actually get it.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            background: #FFFFFF;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        /* Scrolling Announcement Banner - FIXED FOR MOBILE */
+        .announcement-banner {
+            background: linear-gradient(90deg, #165B33 0%, #BB2528 50%, #165B33 100%);
+            color: #FFD700;
+            padding: 12px 0;
+            overflow: hidden;
+            position: relative;
+            border-bottom: 2px solid #FFD700;
+        }
+
+        .announcement-content {
+            display: flex;
+            width: max-content;
+            animation: scroll 30s linear infinite;
+        }
+
+        .announcement-item {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 0 60px;
+            white-space: nowrap;
+            text-shadow: 
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .announcement-content:hover {
+            animation-play-state: paused;
+        }
+        
+        /* Navigation */
+        .nav {
+            background: #1a1a1a;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 900;
+            color: #FFD700;
+            letter-spacing: 2px;
+            text-shadow: 
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000,
+                -2px 0 0 #000,
+                2px 0 0 #000,
+                0 -2px 0 #000,
+                0 2px 0 #000;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #FFFFFF;
+            text-decoration: none;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #FFD700;
+        }
+        
+        .shop-btn {
+            background: #FFD700;
+            color: #1a1a1a !important;
+            padding: 12px 30px;
+            border-radius: 4px;
+            border: 2px solid #000;
+            transition: transform 0.3s, box-shadow 0.3s;
+            font-weight: 900;
+        }
+        
+        .shop-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+        }
+
+        .coming-soon-nav {
+            color: #FFD700 !important;
+            border: 2px solid #FFD700;
+            padding: 8px 20px;
+            border-radius: 4px;
+            transition: all 0.3s;
+            text-shadow: 
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .coming-soon-nav:hover {
+            background: #FFD700;
+            color: #1a1a1a !important;
+            text-shadow: none;
+        }
+        
+        /* Hero Section - STREAMLINED */
+        .hero {
+            background: #F5F5F5;
+            padding: 40px 50px;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 42px;
+            font-weight: 900;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .highlight {
+            color: #FFD700;
+            text-shadow: 
+                -2px -2px 0 #000,
+                2px -2px 0 #000,
+                -2px 2px 0 #000,
+                2px 2px 0 #000;
+        }
+        
+        .hero-tagline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 40px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta-button {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 900;
+            padding: 18px 40px;
+            border-radius: 4px;
+            text-decoration: none;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+        
+        .cta-button {
+            background: #FFD700;
+            color: #1a1a1a;
+            border: 2px solid #000;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+        }
+        
+        .cta-button-secondary {
+            background: transparent;
+            color: #1a1a1a;
+            border: 2px solid #1a1a1a;
+        }
+        
+        .cta-button-secondary:hover {
+            background: #1a1a1a;
+            color: #FFD700;
+        }
+        
+        /* Collections Section */
+        .collections {
+            padding: 60px 50px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #1a1a1a;
+        }
+        
+        .collections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .collection-card {
+            background: #F5F5F5;
+            padding: 40px 30px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .collection-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-color: #FFD700;
+        }
+        
+        .collection-card.featured-holiday {
+            border: 3px solid #BB2528;
+            background: linear-gradient(135deg, #f8f8f8 0%, #fff5f5 100%);
+        }
+        
+        .collection-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .collection-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 900;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+        
+        .collection-desc {
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        
+        .collection-link {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-decoration: none;
+            border-bottom: 2px solid #FFD700;
+            padding-bottom: 2px;
+            transition: color 0.3s;
+        }
+        
+        .collection-link:hover {
+            color: #FFD700;
+        }
+        
+        .new-badge {
+            background: linear-gradient(135deg, #FF6B35 0%, #FF8C42 100%);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-left: 10px;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Email Signup */
+        .email-signup {
+            background: #1a1a1a;
+            padding: 60px 50px;
+            text-align: center;
+        }
+        
+        .email-signup h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 900;
+            color: #FFD700;
+            margin-bottom: 15px;
+            text-shadow: 
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+        
+        .email-subtitle {
+            color: #FFFFFF;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+        
+        .email-form {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .email-form input {
+            padding: 15px 25px;
+            font-size: 16px;
+            border: 2px solid #FFD700;
+            border-radius: 4px;
+            min-width: 300px;
+            background: #2a2a2a;
+            color: #FFFFFF;
+        }
+        
+        .email-form input::placeholder {
+            color: #888;
+        }
+        
+        .email-form button {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 900;
+            padding: 15px 35px;
+            background: #FFD700;
+            color: #1a1a1a;
+            border: 2px solid #000;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+            letter-spacing: 1px;
+        }
+        
+        .email-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+        }
+        
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            padding: 40px 50px;
+            text-align: center;
+            border-top: 2px solid #FFD700;
+        }
+        
+        .footer-logo img {
+            height: 60px;
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            margin-bottom: 20px;
+        }
+        
+        .social-links a {
+            color: #FFD700;
+            font-size: 24px;
+            margin: 0 15px;
+            transition: transform 0.3s;
+            display: inline-block;
+        }
+        
+        .social-links a:hover {
+            transform: scale(1.2);
+        }
+        
+        .footer-text {
+            color: #888;
+            font-size: 14px;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #FFD700;
+            font-size: 28px;
+            cursor: pointer;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav {
+                padding: 15px 20px;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #1a1a1a;
+                flex-direction: column;
+                padding: 20px;
+                gap: 20px;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .hero {
+                padding: 30px 20px;
+            }
+            
+            .hero-title {
+                font-size: 28px;
+            }
+            
+            .hero-tagline {
+                font-size: 20px;
+            }
+            
+            .collections {
+                padding: 40px 20px;
+            }
+            
+            .collections-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .about {
+                padding: 40px 20px;
+            }
+            
+            .email-signup {
+                padding: 40px 20px;
+            }
+            
+            .email-form {
+                flex-direction: column;
+            }
+            
+            .email-form input {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Scrolling Announcement Banner - CYBER WEEK 25% OFF -->
+    <div class="announcement-banner">
+        <div class="announcement-content">
+            <!-- First set of messages -->
+            <div class="announcement-item">🐝 CYBER WEEK AT THE HIVE! 25% OFF EVERYTHING through Sunday! 🐝</div>
+            <div class="announcement-item">🏀 NEW: 6 SPORTS NERD DESIGNS JUST DROPPED! Court blueprints & more! 🏈</div>
+            <div class="announcement-item">✨ 25% OFF ALL SHIRTS through Dec 7th! No code needed! ✨</div>
+            <div class="announcement-item">🎁 Holiday shopping? 25% OFF the entire hive this week! 🎁</div>
+            <div class="announcement-item">🔥 CYBER WEEK SALE: 25% OFF EVERYTHING! Ends Sunday! 🔥</div>
+            <div class="announcement-item">✨ WEAR YOUR NERD. OWN YOUR QUIRKS. JOIN THE HIVE! ✨</div>
+            <!-- Duplicate set for seamless loop -->
+            <div class="announcement-item">🐝 CYBER WEEK AT THE HIVE! 25% OFF EVERYTHING through Sunday! 🐝</div>
+            <div class="announcement-item">🏀 NEW: 6 SPORTS NERD DESIGNS JUST DROPPED! Court blueprints & more! 🏈</div>
+            <div class="announcement-item">✨ 25% OFF ALL SHIRTS through Dec 7th! No code needed! ✨</div>
+            <div class="announcement-item">🎁 Holiday shopping? 25% OFF the entire hive this week! 🎁</div>
+            <div class="announcement-item">🔥 CYBER WEEK SALE: 25% OFF EVERYTHING! Ends Sunday! 🔥</div>
+            <div class="announcement-item">✨ WEAR YOUR NERD. OWN YOUR QUIRKS. JOIN THE HIVE! ✨</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-logo">
+            <div class="nav-brand">NERD HIVE</div>
+        </div>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <div class="nav-links" id="navLinks">
+            <a href="#home">HOME</a>
+            <a href="nerdisms.html">NERDISMS</a>
+            <a href="coming-soon.html" class="coming-soon-nav">🚀 COMING SOON</a>
+            <a href="about.html">ABOUT</a>
+            <a href="https://nerd-hive-official.printify.me/" target="_blank" class="shop-btn">SHOP NOW</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section - UPDATED TAGLINE -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title">FOR EVERY <span class="highlight">TYPE OF NERD</span></h1>
+            
+            <p class="hero-tagline">Wear Your Nerd. Own Your Quirks.</p>
+            
+            <div class="cta-buttons">
+                <a href="https://nerd-hive-official.printify.me/" target="_blank" class="cta-button">SHOP THE HIVE</a>
+                <a href="coming-soon.html" class="cta-button cta-button-secondary">SEE WHAT'S COMING 🚀</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collections Preview -->
+    <section class="collections" id="collections">
+        <h2 class="section-title">EXPLORE THE HIVE</h2>
+        
+        <div class="collections-grid">
+            <div class="collection-card featured-holiday">
+                <div class="collection-icon">🎄</div>
+                <h3 class="collection-name">HOLIDAY NERDISMS <span class="new-badge">NEW!</span></h3>
+                <p class="collection-desc">Christmas stealth missions, gift wrapping geometry, and December calorie math. Holiday humor for the whole family - plus Thanksgiving classics!</p>
+                <a href="holiday.html" class="collection-link">SHOP HOLIDAY COLLECTION →</a>
+            </div>
+
+            <div class="collection-card">
+                <div class="collection-icon">🏀</div>
+                <h3 class="collection-name">SPORTS NERD <span class="new-badge">6 NEW!</span></h3>
+                <p class="collection-desc">Court dimensions, blueprints, and IYKYK hooper humor just dropped! Plus fantasy sports obsessives, betting strategists, and couch coaches. For fans who take stats way too seriously.</p>
+                <a href="sports-nerd.html" class="collection-link">SHOP SPORTS NERD →</a>
+            </div>
+
+            <div class="collection-card">
+                <div class="collection-icon">🔀</div>
+                <h3 class="collection-name">NERD FUSION <span class="new-badge">5 NEW!</span></h3>
+                <p class="collection-desc">Because you're not just ONE kind of nerd. Fuse your passions with our signature Venn diagram designs featuring coffee-ring circles! Two (or three!) passions, one shirt.</p>
+                <a href="nerd-fusion.html" class="collection-link">SHOP NERD FUSION →</a>
+            </div>
+
+            <div class="collection-card">
+                <div class="collection-icon">🎮</div>
+                <h3 class="collection-name">GAMING NERD <span class="new-badge">NEW!</span></h3>
+                <p class="collection-desc">Rage quits, trash talk, and "one more game" lies at 3am. For gamers who know there's no pause button in online multiplayer.</p>
+                <a href="gaming-nerd.html" class="collection-link">SHOP GAMING NERD →</a>
+            </div>
+            
+            <div class="collection-card">
+                <div class="collection-icon">📚</div>
+                <h3 class="collection-name">BOOK NERD</h3>
+                <p class="collection-desc">For the TBR pile hoarders and "one more chapter" liars. Your reading obsession, perfectly captured.</p>
+                <a href="book-nerd.html" class="collection-link">SHOP BOOK NERD →</a>
+            </div>
+            
+            <div class="collection-card">
+                <div class="collection-icon">✍️</div>
+                <h3 class="collection-name">WORD NERD</h3>
+                <p class="collection-desc">Grammar police and vocabulary enthusiasts, this one's for you. Correcting the world since birth.</p>
+                <a href="word-nerd.html" class="collection-link">SHOP WORD NERD →</a>
+            </div>
+            
+            <div class="collection-card">
+                <div class="collection-icon">🧠</div>
+                <h3 class="collection-name">BRAIN ROT <span class="new-badge">3 NEW!</span></h3>
+                <p class="collection-desc">6-7, Italian Brain Rot, and the Brain Rot Glossary just dropped! Plus SKIBIDI, RIZZ, and Aura Checks. Gen Z & Alpha approved, parent-confusing.</p>
+                <a href="brain-rot.html" class="collection-link">SHOP BRAIN ROT →</a>
+            </div>
+            
+            <div class="collection-card">
+                <div class="collection-icon">🤖</div>
+                <h3 class="collection-name">AI-ISMS</h3>
+                <p class="collection-desc">Where AI culture meets wearable humor. PolyAImory, tech stack relationships, and collab frustrations. For developers and AI enthusiasts who speak the language.</p>
+                <a href="ai-isms.html" class="collection-link">SHOP AI-ISMS →</a>
+            </div>
+            
+            <div class="collection-card">
+                <div class="collection-icon">🐝</div>
+                <h3 class="collection-name">MINI HIVE</h3>
+                <p class="collection-desc">Kids collection designed by 9-year-old Nylah! Adorable chicks, dancing bears, space friends, and empowering bees. Kid creativity at its finest.</p>
+                <a href="mini-hive.html" class="collection-link">SHOP MINI HIVE →</a>
+            </div>
+            
+            <div class="collection-card">
+                <div class="collection-icon">🐝</div>
+                <h3 class="collection-name">ESSENTIALS</h3>
+                <p class="collection-desc">Logo shirts, brand basics, and foundational pieces. Your entry to the Hive.</p>
+                <a href="essentials.html" class="collection-link">SHOP ESSENTIALS →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Email Signup -->
+    <section class="email-signup">
+        <h3>JOIN THE HIVE 🐝</h3>
+        <p class="email-subtitle">Get first dibs on new designs, exclusive drops, and nerd culture news.</p>
+        <!-- Begin Constant Contact Inline Form Code -->
+        <div class="ctct-inline-form" data-form-id="58c6e1e8-31a4-4ea2-9f78-54d1969bd685"></div>
+        <!-- End Constant Contact Inline Form Code -->
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-logo">
+            <img src="logo-square.png" alt="Nerd Hive Icon">
+        </div>
+        
+        <div class="social-links">
+            <a href="https://instagram.com/nerdhiveofficial" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://tiktok.com/@nerdhiveofficial" target="_blank" aria-label="TikTok">
+                <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61582089479308" target="_blank" aria-label="Facebook">
+                <i class="fab fa-facebook"></i>
+            </a>
+        </div>
+        
+        <div class="footer-text">
+            © 2025 Nerd Hive™. All rights reserved. | Smart is always in style.
+        </div>
+        <div style="margin-top: 15px;">
+            <a href="privacy.html" style="color: #FFD700; text-decoration: none; margin: 0 15px; font-size: 13px; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; font-weight: 700;">Privacy Policy</a>
+            <a href="terms.html" style="color: #FFD700; text-decoration: none; margin: 0 15px; font-size: 13px; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; font-weight: 700;">Terms of Service</a>
+            <a href="accessibility.html" style="color: #FFD700; text-decoration: none; margin: 0 15px; font-size: 13px; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; font-weight: 700;">Accessibility</a>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+    
+    <!-- Constant Contact Script -->
+    <script src="//static.ctctcdn.com/js/signup-form-widget/current/signup-form-widget.min.js" async defer></script>
+</body>
+</html>
